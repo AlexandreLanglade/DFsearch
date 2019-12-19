@@ -1,7 +1,7 @@
 #include "include/descripteur_image.h"
 
-struct descripteur_audio_s
+struct descripteur_image_s
 {
     /* data */
-    struct descriteur_audio_s * suiv;
+    struct descripteur_image_s * suiv;
 };
