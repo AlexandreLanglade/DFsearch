@@ -14,7 +14,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+//uhoonj
 typedef struct descripteur_texte_s * Descripteur_texte;
 
 #endif
