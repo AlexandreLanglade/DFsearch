@@ -1,18 +1,19 @@
-// Module de gestion des entrées de l'utilsateur.
+/**
+ * @file entree_sortie.c
+ * @author Contributors of https://github.com/AlexandreLanglade/DFsearch
+ * @brief Module de gestion des entrées et sorties du logiciel
+ * @version 0.1
+ * @date 2019-12-26
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
-int lire_un_entier(int * x, int min, int max); // pour check l'entrée d'un entier (min et max compris)
-int lire_un_chemin(char ** ch); // pour check l'entrée d'un chemin
-int lire_string(char ** s); // pour check l'entrée d'un string
+#ifndef ENTRESORTIE_H
+#define ENTRESORTIE_H
 
+int lire_un_entier(int * x, int min, int max);
+int lire_un_chemin(char ** ch);
+void lire_string(char ** s); 
 
-//desc_texte lire_fich_texte(char * chemin)
-//void ecrire_fich_texte(...) 
-
-//desc_image lire_fich_image(char * chemin)
-//void ecrire_fich_image(...)
-
-//desc_audio lire_fich_audio(char * chemin)
-//void ecrire_fich_audio(...)
-
-int ouvrir_fichier(char * chemin); //ouvre une fichier
-
+#endif

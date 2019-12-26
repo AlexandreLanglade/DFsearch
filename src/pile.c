@@ -11,7 +11,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "include/pile.h"
+#include <assert.h>
+#include "../include/pile.h"
 
 /**
  * @brief Structure d'une pile générique
