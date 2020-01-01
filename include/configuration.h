@@ -1,20 +1,29 @@
-// Module de gestion du fichier .config
+/**
+ * @file configuration.c
+ * @author LANGLADE Alexandre
+ * @brief Module gérant la configuration de l'indexation à partir du fichier .config
+ * @version 1.0
+ * @date 2020-01-01
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
 
-int afficher_config();
-int modifier_config(int param, int valeur);
+#ifndef CONFIG_H
+#define CONFIG_H
 
-/*
-image :
-- entier : nb bit quantification (1, 2 ou 3)
-- entier : seuil (0-100)
+void afficher_config();
 
-texte :
-- entier : x mots les plus présents (>0)
-- entier : seuil (>0)
+int getModifTexte();
+int getModifImage();
+int getModifAudio();
 
+int getConfig_texte_ValeurLimite();
+int getConfig_texte_Seuil();
+int getConfig_image_NbBits();
+int getConfig_audio_NbEchant();
+int getConfig_audio_NbInterv();
 
-audio :
-- entier m (>0)
-- entier k (>0)
+void modifier_config(int param, int valeur);
 
-*/
+#endif
