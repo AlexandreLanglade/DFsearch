@@ -25,11 +25,15 @@
  */
 int lire_un_entier(int * x, int min, int max)
 {
-    int i;
-    scanf("%d", &i);
+    long i;
+    char entree[150];
+    char * end;
+    scanf("%s", entree);
+    i = strtol(entree, &end, 10);
+    if (end == entree) return 0;
     if (i >= min && i <= max)
     {
-        *x = i;
+        *x = (int)i;
         return 1;
     }
     return 0;
