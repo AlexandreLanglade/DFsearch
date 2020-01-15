@@ -153,6 +153,12 @@ int getConfig_audio_NbInterv()
     return get(8);
 }
 
+/**
+ * @brief Fonction permettant une modification de la configuration
+ * 
+ * @param param le paramètre à modifier
+ * @param valeur la nouvelle valeur à attribuer au paramètre
+ */
 void modifier_config(int param, int valeur)
 {
     assert(param >= 1 && param <= 5);
@@ -173,4 +179,42 @@ void modifier_config(int param, int valeur)
     rewind(f);
     fprintf(f, "%d %d %d %d %d %d %d %d", tab[0], tab[1], tab[2], tab[3], tab[4], tab[5], tab[6], tab[7]);
     close(f);
+}
+
+void indexation() {
+
+    /* indexation texte */
+    if (getModifTexte() == 1)
+    {
+        FILE * fp;
+        int test = 0;
+        fp = popen("ls -l | wc -l","r");
+        fscanf(fp, "%d", &test);
+        printf("%d", test);
+        pclose(fp);
+    }
+    else
+    {
+        /* code */
+    }
+
+    /* indexation image */
+    if (getModifImage() == 1)
+    {
+        /* code */
+    }
+    else
+    {
+        /* code */
+    }
+
+    /* indexation audio */
+    if (getModifAudio() == 1)
+    {
+        /* code */
+    }
+    else
+    {
+        /* code */
+    }
 }

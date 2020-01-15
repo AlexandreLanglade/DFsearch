@@ -12,6 +12,10 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include "./indexation_texte.h"
+#include "./indexation_image.h"
+#include "./indexation_audio.h"
+
 void afficher_config();
 
 int getModifTexte();
@@ -25,5 +29,7 @@ int getConfig_audio_NbEchant();
 int getConfig_audio_NbInterv();
 
 void modifier_config(int param, int valeur);
+
+void indexation();
 
 #endif
