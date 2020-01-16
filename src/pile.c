@@ -95,11 +95,11 @@ void * depiler_pile(Pile p, int type)
     if (p->type == 1)
     {
         aux = p->dt;
-        p->dt = getDtSuiv(p->dt);
+        p->dt = p->dt->suivant;
     } else if (p->type == 2)
     {
         aux = p->di;
-        p->di = getDiSuiv(p->di);
+        p->di = p->di->desc_suiv;
     } else
     {
         aux = p->da;

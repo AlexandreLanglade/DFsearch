@@ -1,6 +1,6 @@
 /**
  * @file entree_sortie.c
- * @author Contributors of https://github.com/AlexandreLanglade/DFsearch
+ * @author Alexandre LANGLADE
  * @brief Module de gestion des entrées et sorties du logiciel
  * @version 0.1
  * @date 2019-12-26
@@ -67,12 +67,19 @@ int lire_un_chemin(char ** ch)
  * @brief Fonction pour recevoir un char * de l'utilisateur
  * 
  * @param s Pointeur sur la variable où sauvegarder l'entrée
+ * @return int : 0 en cas de mauvaise entrée, 1 sinon
  */
-void lire_string(char ** s)
+int lire_string(char ** s)
 {
     char chemin[150];
+    char * non = "AZERTYUIOPQSDFGHJKLMWXCVBN1234567890&-_à$%!/:;.,?µ+";
     scanf("%s", chemin);
     *s = (char *)malloc(sizeof(char) * (strlen(chemin) + 1));
     assert(*s != NULL);
     *s = strcpy(*s, chemin);
+    if (strpbrk(*s, non) != NULL)
+    {
+        return 0;
+    }
+    return 1;
 }

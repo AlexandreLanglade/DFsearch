@@ -1,7 +1,64 @@
-#include "include/descripteur_image.h"
+#include "../include/descripteur_image.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-struct descripteur_image_s
-{
-    /* data */
-    struct descripteur_image_s * suiv;
-};
+
+
+
+/*------------------------------------ fonction d'ecriture de descripteurs ----------------------------------------*/
+
+void ecriture_descripteur_image (descripteur_image_s descripteur, int couleur){
+    char * aux0;
+    FILE * fileDescripteurImage = NULL;
+    if (couleur == 1)
+    {
+        aux0 = "../data/Descripteurs/ImagesRGB/";
+    }
+    else
+    {
+        aux0 = "../data/Descripteurs/Images/";
+    }  
+    char * aux = (char *)malloc(50*sizeof(char));
+    strcpy(aux, aux0);
+    int num = descripteur.ID;
+    char snum[5];
+    itoa(num, snum, 10);
+    strcat(aux, snum);
+    fileDescripteurImage = fopen(aux, "w");
+    if (fileDescripteurImage==NULL) printf("impossible de créer ce fichier");
+
+//on ecrit l'ID
+    fprintf(fileDescripteurImage,"%d \n", descripteur.ID);
+
+//on ecrit le tableau d'intensité et d'occurences
+    for (int i=0; i<256; i++){
+        fprintf(fileDescripteurImage, "%d  ",descripteur.listeIntensite[i].intensite);
+        fprintf(fileDescripteurImage, "%d \n",descripteur.listeIntensite[i].occurence);
+    }
+    fclose(fileDescripteurImage);
+    free(aux);
+}
+
+
+/*-------------------- fonction de lecture de descripteur et remplissage de la structure -------------------*/
+
+void lecture_descripteur_image (descripteur_image_s descripteur, char *chemindescripteurtxt){
+    FILE * fileDescripteurImage = NULL;
+    fileDescripteurImage = fopen(chemindescripteurtxt, "r");
+    if (fileDescripteurImage==NULL) printf("impossible de lire ce fichier");
+
+    //on vient remplir la structure ID puis boucle pour le tableau d'occurence
+
+    fscanf(fileDescripteurImage, "%d", &descripteur.ID);
+
+    for(int i=0; i<256; i++){
+        fscanf(fileDescripteurImage, "%d", &descripteur.listeIntensite[i].intensite);
+        fscanf(fileDescripteurImage, "%d", &descripteur.listeIntensite[i].occurence);
+    }
+    fclose(fileDescripteurImage);
+}
+
+void setDiSuiv(Descripteur_image a, Descripteur_image b) {
+    a->desc_suiv = b;
+}

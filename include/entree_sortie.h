@@ -1,6 +1,6 @@
 /**
  * @file entree_sortie.c
- * @author Contributors of https://github.com/AlexandreLanglade/DFsearch
+ * @author Alexandre LANGLADE
  * @brief Module de gestion des entrées et sorties du logiciel
  * @version 0.1
  * @date 2019-12-26
@@ -14,6 +14,6 @@
 
 int lire_un_entier(int * x, int min, int max);
 int lire_un_chemin(char ** ch);
-void lire_string(char ** s); 
+int lire_string(char ** s); 
 
 #endif

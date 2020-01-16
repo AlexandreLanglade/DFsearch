@@ -15,6 +15,7 @@
 #include "./indexation_texte.h"
 #include "./indexation_image.h"
 #include "./indexation_audio.h"
+#include "./pile.h"
 
 void afficher_config();
 
@@ -30,6 +31,6 @@ int getConfig_audio_NbInterv();
 
 void modifier_config(int param, int valeur);
 
-void indexation();
+void indexation(Pile t, Pile im, Pile imrgb);
 
 #endif

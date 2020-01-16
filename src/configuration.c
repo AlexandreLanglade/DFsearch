@@ -181,17 +181,23 @@ void modifier_config(int param, int valeur)
     close(f);
 }
 
-void indexation() {
+void indexation(Pile t, Pile im, Pile imrgb) {
 
     /* indexation texte */
     if (getModifTexte() == 1)
     {
-        FILE * fp;
-        int test = 0;
-        fp = popen("ls -l | wc -l","r");
-        fscanf(fp, "%d", &test);
-        printf("%d", test);
-        pclose(fp);
+        system("ls ../data/Corpus/Textes/ > templistetexte");
+        FILE* f = NULL;
+        f = fopen("templistetexte", "r");
+        assert(f != NULL);
+        char chem[100];
+        while (!feof(f))
+        {
+            fscanf(f, "%s", chem);
+            index_un_texte(t, chem);
+        }
+        fclose(f);
+        system("rm templistetexte");
     }
     else
     {
@@ -201,7 +207,33 @@ void indexation() {
     /* indexation image */
     if (getModifImage() == 1)
     {
-        /* code */
+        system("ls ../data/Corpus/Images/NG > templisteimage");
+        FILE* f = NULL;
+        f = fopen("templisteimage", "r");
+        assert(f != NULL);
+        char chem[100];
+        while (!feof(f))
+        {
+            fscanf(f, "%s", chem);
+            fscanf(f, "%s", chem);
+            index_une_image(im, chem);
+        }
+        fclose(f);
+        system("rm templisteimage");
+
+        system("ls ../data/Corpus/Images/RGB > templisteimage");
+        FILE* f = NULL;
+        f = fopen("templisteimage", "r");
+        assert(f != NULL);
+        char chem[100];
+        while (!feof(f))
+        {
+            fscanf(f, "%s", chem);
+            fscanf(f, "%s", chem);
+            index_une_image(imrgb, chem);
+        }
+        fclose(f);
+        system("rm templisteimage");
     }
     else
     {
