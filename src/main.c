@@ -1,12 +1,21 @@
-#include "main.h"
+void init_moteur()
+{
+
+}
+
+void close_moteur()
+{
+
+}
 
 int main(int argc, char const *argv[])
 {
-    /*
-    verif indexation : nb element / config modifiee
-    ->indexation des non-indexés !
-
-
-    */
+    int erreur;
+    init_moteur();
+    do
+    {
+        erreur = menu_ouverture();
+    } while (erreur != 0);
+    close_moteur();
     return 0;
 }

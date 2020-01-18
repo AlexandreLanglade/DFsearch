@@ -23,7 +23,7 @@ struct pile_s
     int type; /* 1texte 2image 3audio */
     Descripteur_texte dt;
     Descripteur_image di;
-    Descripteur_audio da;
+    /*Descripteur_audio da;*/
 };
 
 /**
@@ -39,7 +39,7 @@ Pile initialiser_pile(int type)
     assert(res != NULL);
     res->dt = NULL;
     res->di = NULL;
-    res->da = NULL;
+    /*res->da = NULL;*/
     res->type = type;
     return res;
 }
@@ -64,8 +64,8 @@ void empiler_pile(Pile p, void * elt_descripteur, int type)
         p->di = elt_descripteur;
     } else
     {
-        if (p->da != NULL) setDaSuiv(elt_descripteur, p->da);
-        p->da = elt_descripteur;
+        /*if (p->da != NULL) setDaSuiv(elt_descripteur, p->da);
+        p->da = elt_descripteur;*/
     }  
 }
 
@@ -77,7 +77,7 @@ void empiler_pile(Pile p, void * elt_descripteur, int type)
  */
 int estVide_pile(Pile p)
 {
-    return (p->dt == NULL && p->di == NULL && p->da == NULL);
+    return (p->dt == NULL && p->di == NULL /*&& p->da == NULL*/);
 }
 
 /**
@@ -102,8 +102,8 @@ void * depiler_pile(Pile p, int type)
         p->di = p->di->desc_suiv;
     } else
     {
-        aux = p->da;
-        p->da = getDaSuiv(p->da);
+        /*aux = p->da;
+        p->da = getDaSuiv(p->da);*/
     }
     return aux;    
 }
@@ -127,6 +127,6 @@ void * top_pile(Pile p, int type)
         return p->di;
     } else
     {
-        return p->da;
+        /*return p->da;*/
     }  
 }

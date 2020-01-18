@@ -72,7 +72,7 @@ int lire_un_chemin(char ** ch)
 int lire_string(char ** s)
 {
     char chemin[150];
-    char * non = "AZERTYUIOPQSDFGHJKLMWXCVBN1234567890&-_à$%!/:;.,?µ+";
+    char * non = "AZERTYUIOPQSDFGHJKLMWXCVBN1234567890&-_à$\%!/:;.,?µ+";
     scanf("%s", chemin);
     *s = (char *)malloc(sizeof(char) * (strlen(chemin) + 1));
     assert(*s != NULL);
