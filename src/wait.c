@@ -29,3 +29,18 @@ void comparaison_audio()
 {
     printf("fct comparaison audio non implémentée\n");
 }
+
+void indexation()
+{
+    printf("fct indexation non implémentée\n");
+}
+
+void indexation_un_doc()
+{
+    printf("fct indexation un doc non implémentée\n");
+}
+
+void modif_config()
+{
+    printf("fct modif config non implémentée\n");
+}

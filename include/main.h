@@ -1,6 +1,6 @@
-// Module contenant le main
+#ifndef MAIN_H
+#define MAIN_H
 
-int main(int argc, char const *argv[]); //le logiciel exécuté
+#include "menu.h"
 
-//init des piles
-//indexation
+#endif

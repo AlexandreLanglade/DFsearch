@@ -4,3 +4,6 @@ void recherche_couleur_dominante();
 void comparaison_image();
 void recherche_motif();
 void comparaison_audio();
+void indexation();
+void indexation_un_doc();
+void modif_config();

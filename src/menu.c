@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../include/entree_sortie.h"
-#include "../include/wait.h"
+#include "../include/menu.h"
 
+/*
 void param_recherche()
 {
     system("clear");
@@ -90,7 +90,7 @@ void param_recherche()
             printf("\nEntrée invalide. Veuillez entrer un des choix proposés. \n\n");
     } while (choix_param_recherche != 1 && choix_param_recherche != 2 && choix_param_recherche != 3 && choix_param_recherche != 4);
 }
-
+*/
 int menu_texte()
 {
     int choix_textes = 0;
@@ -253,94 +253,62 @@ int menu_utilisateur()
     }
 }
 
-void menu_administrateur()
+int menu_administrateur()
 {
-    system("clear");
     int choix_menu_administrateur = 0;
     int code_retour = 0;
-    do
+    printf("Menu administrateur :\n\n");
+    printf("(1) Lancer l'indexation complète\n");
+    printf("(2) Lancer l'indexation d'un fichier seul\n");
+    printf("(3) Modifier la configuration\n");
+    printf("(4) Revenir au menu principal\n");
+    printf("(5) Quitter le logiciel \n");
+    code_retour = lire_un_entier(&choix_menu_administrateur, 1, 5);
+    if (code_retour == 0)
+        return 12;
+    if (choix_menu_administrateur == 1)
     {
-        printf("Félicitations, vous entrez dans le mode administrateur. \n\n");
-        printf("Merci d'entrer un numéro correspondant à une action\n");
-        printf("(1) Lancer l'indexation complète\n");
-        printf("(2) Lancer l'indexation d'un fichier seul\n");
-        printf("(3) Modifier les paramètres d'indexation\n");
-        printf("(4) Modifier les paramètres de recherche\n");
-        printf("(5) Revenir au menu principal\n");
-        printf("(6) Quitter le logiciel \n");
-        //scanf("%d",&choix_menu_administrateur);
-        code_retour = lire_un_entier(&choix_menu_administrateur, 1, 6);
-        if (choix_menu_administrateur == 1)
-        {
-            //indexation();
-            printf("Fonction non implémentée.");
-        }
-        if (choix_menu_administrateur == 2)
-        {
-            printf("Fonction non implémentée.");
-            //indexation_fichier();
-        }
-        if (choix_menu_administrateur == 3)
-        {
-            printf("Fonction non implémentée.");
-            //param_indexation();
-        }
-        if (choix_menu_administrateur == 4)
-        {
-            printf("Fonction non implémentée.");
-            //param_recherche();
-        }
-        if (choix_menu_administrateur == 5)
-        {
-            system("clear");
-            //menu_ouverture();
-        }
-        if (choix_menu_administrateur == 6)
-        {
-            return;
-        }
-        if (choix_menu_administrateur != 1 && choix_menu_administrateur != 2 && choix_menu_administrateur != 3 && choix_menu_administrateur != 4 && choix_menu_administrateur != 5 && choix_menu_administrateur != 6)
-        {
-            printf("\nEntrée invalide. Veuillez entrer un des choix proposés. \n\n");
-        }
+        indexation();
+        return 3;
     }
-    //while(choix_menu_administrateur!=1 && choix_menu_administrateur!=2 && choix_menu_administrateur!=3 && choix_menu_administrateur!=4 && choix_menu_administrateur!=5 && choix_menu_administrateur!=6);
-    while (code_retour == 0);
+    else if (choix_menu_administrateur == 2)
+    {
+        indexation_un_doc();
+        return 3;
+    }
+    else if (choix_menu_administrateur == 3)
+    {
+        modif_config();
+        return 3;
+    }
+    else if (choix_menu_administrateur == 4)
+    {
+        code_retour = menu_ouverture();
+        return code_retour;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
-void mdp()
+int mdp()
 {
-    system("clear");
     int nbEssais = 0;
-    int nbEssaisRestant = 2;
+    int code_retour;
 
     printf("Vous avez choisi le mode administrateur. Pour y accéder, veuillez saisir le mot de passe :\n\n");
     char mdp[50] = "";
-    do
+    scanf("%s", mdp);
+    if (strcmp(mdp, "admin") == 0)
+    { //compare les chaines de caractères
+        code_retour = menu_administrateur();
+        return code_retour;
+    }
+    else
     {
-        scanf("%s", mdp);
-        //int fin=0;
-        if (strcmp(mdp, "dufonsociety") == 0)
-        { //compare les chaines de caractères
-            menu_administrateur();
-            nbEssais = 0;
-        }
-        else if (nbEssais != 2)
-        {
-            nbEssaisRestant = nbEssaisRestant - nbEssais;
-            printf("\nLe mot de passe entré est incorrect. Il vous reste %d essais.\n\n", nbEssaisRestant);
-            nbEssais++;
-            //if(nbEssais==3)fin=1;
-        }
-        else if (strcmp(mdp, "dufonsociety") != 0)
-        {
-            printf("\n ******************** Accès non autorisé ******************** \n\n Vous allez être redirigé vers le menu utilisateur.\n\n Veuillez saisir n'importe quel caractère.\n\n");
-            scanf("%s", mdp);
-            nbEssais = 0;
-            menu_utilisateur();
-            nbEssais = 0;
-        }
-    } while (nbEssais != 0);
+        return 11;
+    }
 }
 
 int menu_ouverture()
