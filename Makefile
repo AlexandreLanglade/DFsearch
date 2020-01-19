@@ -19,3 +19,9 @@ lib/entree_sortie.o: src/entree_sortie.c
 
 lib/wait.o: src/wait.c
 	$(CC) -o $@ -c $< $(CFLAGS)
+
+clean:
+	rm -rf lib/*.o
+
+mrproper: clean
+	rm -rf $(EXEC)

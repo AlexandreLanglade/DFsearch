@@ -1,46 +1,56 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void recherche_mot_cle()
 {
-    printf("fct mot clé non implémentée\n");
+    printf("\033[33;01mfct mot clé non implémentée\033[00m\n");
+    system("sleep 2");
 }
 
 void comparaison_texte()
 {
-    printf("fct comparaison texte non implémentée\n");
+    printf("\033[33;01mfct comparaison texte non implémentée\033[00m\n");
+    system("sleep 2");
 }
 
 void recherche_couleur_dominante()
 {
-    printf("fct couleur dominante non implémentée\n");
+    printf("\033[33;01mfct couleur dominante non implémentée\033[00m\n");
+    system("sleep 2");
 }
 
 void comparaison_image()
 {
-    printf("fct comparaison image non implémentée\n");
+    printf("\033[33;01mfct comparaison image non implémentée\033[00m\n");
+    system("sleep 2");
 }
 
 void recherche_motif()
 {
-    printf("fct recherche motif non implémentée\n");
+    printf("\033[33;01mfct recherche motif non implémentée\033[00m\n");
+    system("sleep 2");
 }
 
 void comparaison_audio()
 {
-    printf("fct comparaison audio non implémentée\n");
+    printf("\033[33;01mfct comparaison audio non implémentée\033[00m\n");
+    system("sleep 2");
 }
 
 void indexation()
 {
-    printf("fct indexation non implémentée\n");
+    printf("\033[33;01mfct indexation non implémentée\033[00m\n");
+    system("sleep 2");
 }
 
 void indexation_un_doc()
 {
-    printf("fct indexation un doc non implémentée\n");
+    printf("\033[33;01mfct indexation un doc non implémentée\033[00m\n");
+    system("sleep 2");
 }
 
 void modif_config()
 {
-    printf("fct modif config non implémentée\n");
+    printf("\033[33;01mfct modif config non implémentée\033[00m\n");
+    system("sleep 2");
 }

@@ -23,7 +23,7 @@ void ecriture_descripteur_image (descripteur_image_s descripteur, int couleur){
     strcpy(aux, aux0);
     int num = descripteur.ID;
     char snum[5];
-    itoa(num, snum, 10);
+    sprintf(snum, "%d", num);
     strcat(aux, snum);
     fileDescripteurImage = fopen(aux, "w");
     if (fileDescripteurImage==NULL) printf("impossible de créer ce fichier");

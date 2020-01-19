@@ -100,7 +100,7 @@ int menu_texte()
     printf("Vous avez choisi de rechercher des textes. \n");
     printf("(1) Recherche par mot-clef \n");
     printf("(2) Recherche par comparaison \n");
-    printf("(3) Retour au menu principal \n");
+    printf("(3) Retour au menu utilisateur \n");
     printf("(4) Quitter le logiciel\n");
     code_retour = lire_un_entier(&choix_textes, 1, 4);
     if (code_retour == 0)
@@ -127,8 +127,7 @@ int menu_texte()
     }
     else if (choix_textes == 3)
     {
-        code_retour = menu_ouverture();
-        return code_retour;
+        return 3;
     }
     else
     {
@@ -144,7 +143,7 @@ int menu_image()
     printf("Vous avez choisi de rechercher des images. \n");
     printf("(1) Recherche par couleur dominante \n");
     printf("(2) Recherche par comparaison \n");
-    printf("(3) Retour au menu principal \n");
+    printf("(3) Retour au menu utilisateur \n");
     printf("(4) Quitter le logiciel \n");
     code_retour = lire_un_entier(&choix_images, 1, 4);
     if (code_retour == 0)
@@ -166,8 +165,7 @@ int menu_image()
     }
     else if (choix_images == 3)
     {
-        code_retour = menu_ouverture();
-        return code_retour;
+        return 3;
     }
     else
     {
@@ -183,7 +181,7 @@ int menu_audio()
     printf("Vous avez choisi de rechercher des sons. \n");
     printf("(1) Recherche par motif \n");
     printf("(2) Recherche par comparaison \n");
-    printf("(3) Retour au menu principal \n");
+    printf("(3) Retour au menu utilisateur \n");
     printf("(4) Quitter le logiciel \n");
     code_retour = lire_un_entier(&choix_sons, 1, 4);
     if (code_retour == 0)
@@ -210,8 +208,7 @@ int menu_audio()
     }
     else if (choix_sons == 3)
     {
-        code_retour = menu_ouverture();
-        return code_retour;
+        return 3;
     }
     else
     {
@@ -228,23 +225,33 @@ int menu_utilisateur()
     printf("(1) Recherche de textes \n");
     printf("(2) Recherche d'images \n");
     printf("(3) Recherche de sons \n");
-    printf("(4) Quitter le logiciel \n");
-    code_retour = lire_un_entier(&choix_menu_utilisateur, 1, 4);
+    printf("(4) Retour à l'acceuil \n");
+    printf("(5) Quitter le logiciel \n");
+    code_retour = lire_un_entier(&choix_menu_utilisateur, 1, 5);
     if (code_retour == 0)
         return 4;
     if (choix_menu_utilisateur == 1)
     {
+        system("clear");
         code_retour_fils = menu_texte();
         return code_retour_fils;
     }
     else if (choix_menu_utilisateur == 2)
     {
+        system("clear");
         code_retour_fils = menu_image();
         return code_retour_fils;
     }
     else if (choix_menu_utilisateur == 3)
     {
+        system("clear");
         code_retour_fils = menu_audio();
+        return code_retour_fils;
+    }
+    else if (choix_menu_utilisateur == 4)
+    {
+        system("clear");
+        code_retour_fils = menu_ouverture();
         return code_retour_fils;
     }
     else
@@ -257,11 +264,11 @@ int menu_administrateur()
 {
     int choix_menu_administrateur = 0;
     int code_retour = 0;
-    printf("Menu administrateur :\n\n");
+    printf("Menu administrateur :\n");
     printf("(1) Lancer l'indexation complète\n");
     printf("(2) Lancer l'indexation d'un fichier seul\n");
     printf("(3) Modifier la configuration\n");
-    printf("(4) Revenir au menu principal\n");
+    printf("(4) Passer en mode utilisateur\n");
     printf("(5) Quitter le logiciel \n");
     code_retour = lire_un_entier(&choix_menu_administrateur, 1, 5);
     if (code_retour == 0)
@@ -269,22 +276,21 @@ int menu_administrateur()
     if (choix_menu_administrateur == 1)
     {
         indexation();
-        return 3;
+        return 13;
     }
     else if (choix_menu_administrateur == 2)
     {
         indexation_un_doc();
-        return 3;
+        return 13;
     }
     else if (choix_menu_administrateur == 3)
     {
         modif_config();
-        return 3;
+        return 13;
     }
     else if (choix_menu_administrateur == 4)
     {
-        code_retour = menu_ouverture();
-        return code_retour;
+        return 3;
     }
     else
     {
@@ -294,16 +300,12 @@ int menu_administrateur()
 
 int mdp()
 {
-    int nbEssais = 0;
-    int code_retour;
-
-    printf("Vous avez choisi le mode administrateur. Pour y accéder, veuillez saisir le mot de passe :\n\n");
-    char mdp[50] = "";
-    scanf("%s", mdp);
+    char * mdp;
+    printf("Mot de passe : "); 
+    lire_string(&mdp);
     if (strcmp(mdp, "admin") == 0)
-    { //compare les chaines de caractères
-        code_retour = menu_administrateur();
-        return code_retour;
+    { 
+        return 13;
     }
     else
     {
@@ -316,7 +318,7 @@ int menu_ouverture()
     int choix_mode = 0;
     int code_retour = 0;
     int code_retour_fils = 0;
-    printf("La DufonSociety vous souhaite la bienvenue sur son moteur de recherche\n\n\n");
+    printf("La DufonSociety vous souhaite la bienvenue sur son moteur de recherche\n\n");
     printf("Pour accéder au mode utilisateur, veuillez saisir 1. \n");
     printf("Pour accéder au mode administrateur, veuillez saisir 2. \n");
     printf("Pour quitter le logiciel, veuillez saisir 3. \n");
@@ -325,11 +327,11 @@ int menu_ouverture()
         return 1;
     if (choix_mode == 1)
     {
-        code_retour_fils = menu_utilisateur();
-        return code_retour_fils;
+        return 3;
     }
     else if (choix_mode == 2)
     {
+        system("clear");
         code_retour_fils = mdp();
         return code_retour_fils;
     }

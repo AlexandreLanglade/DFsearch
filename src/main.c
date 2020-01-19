@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "../include/main.h"
 
 void init_moteur()
@@ -11,7 +12,7 @@ void close_moteur()
 
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     int erreur;
     init_moteur();
@@ -21,61 +22,78 @@ int main(int argc, char const *argv[])
         switch (erreur)
         {
         case 1:
-            printf("(Err) Selection incorrecte\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Selection incorrecte\033[00m\n");
             erreur = menu_ouverture();
             break;
         
         case 2:
-            printf("(Err) Mot clé incorrect\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Mot clé incorrect\033[00m\n");
             erreur = menu_texte();
             break;
 
         case 3:
-            erreur = menu_ouverture();
+            system("clear");
+            erreur = menu_utilisateur();
             break;
 
         case 4:
-            printf("(Err) Selection incorrecte\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Selection incorrecte\033[00m\n");
             erreur = menu_utilisateur();
             break;
 
         case 5:
-            printf("(Err) Selection incorrecte\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Selection incorrecte\033[00m\n");
             erreur = menu_texte();
             break;
         
         case 6:
-            printf("(Err) Selection incorrecte\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Selection incorrecte\033[00m\n");
             erreur = menu_image();
             break;
 
         case 7:
-            printf("(Err) Selection incorrecte\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Selection incorrecte\033[00m\n");
             erreur = menu_audio();
             break;
 
         case 8:
-            printf("(Err) Chemin incorrect\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Chemin incorrect\033[00m\n");
             erreur = menu_texte();
             break;
 
         case 9:
-            printf("(Err) Chemin incorrect\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Chemin incorrect\033[00m\n");
             erreur = menu_image();
             break;
 
         case 10:
-            printf("(Err) Chemin incorrect\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Chemin incorrect\033[00m\n");
             erreur = menu_audio();
             break;
 
         case 11:
-            printf("(Err) Mot de passe incorrect\n");
-            erreur = mdp();
+            system("clear");
+            printf ("\033[31;01m(Err) Mot de passe incorrect\033[00m\n");
+            erreur = menu_ouverture();
             break;
 
         case 12:
-            printf("(Err) Selection incorrecte\n");
+            system("clear");
+            printf ("\033[31;01m(Err) Selection incorrecte\033[00m\n");
+            erreur = menu_administrateur();
+            break;
+
+        case 13:
+            system("clear");
             erreur = menu_administrateur();
             break;
 

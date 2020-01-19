@@ -48,11 +48,11 @@ int lire_un_entier(int * x, int min, int max)
 int lire_un_chemin(char ** ch)
 {
     char chemin[150];
+    FILE * test = NULL;
     scanf("%s", chemin);
     *ch = (char *)malloc(sizeof(char) * (strlen(chemin) + 1));
     assert(*ch != NULL);
     *ch = strcpy(*ch, chemin);
-    FILE * test = NULL;
     test = fopen(*ch, "r");
     if (test == NULL)
     {
@@ -72,7 +72,7 @@ int lire_un_chemin(char ** ch)
 int lire_string(char ** s)
 {
     char chemin[150];
-    char * non = "AZERTYUIOPQSDFGHJKLMWXCVBN1234567890&-_à$\%!/:;.,?µ+";
+    char * non = "AZERTYUIOPQSDFGHJKLMWXCVBN1234567890&-_à$!/:;.,?µ+";
     scanf("%s", chemin);
     *s = (char *)malloc(sizeof(char) * (strlen(chemin) + 1));
     assert(*s != NULL);
@@ -81,5 +81,9 @@ int lire_string(char ** s)
     {
         return 0;
     }
+    if ((*s)[strlen(*s)-1] == 's')
+    {
+        (*s)[strlen(*s)-1] = '\0';
+    } 
     return 1;
 }

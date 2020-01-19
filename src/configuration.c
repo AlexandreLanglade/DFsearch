@@ -216,7 +216,7 @@ void indexation(Pile t, Pile im, Pile imrgb) {
         {
             fscanf(f, "%s", chem);
             fscanf(f, "%s", chem);
-            index_une_image(im, chem);
+            index_une_image(im, chem, 1);
         }
         fclose(f);
         system("rm templisteimage");
@@ -230,7 +230,7 @@ void indexation(Pile t, Pile im, Pile imrgb) {
         {
             fscanf(f, "%s", chem);
             fscanf(f, "%s", chem);
-            index_une_image(imrgb, chem);
+            index_une_image(imrgb, chem, 3);
         }
         fclose(f);
         system("rm templisteimage");
