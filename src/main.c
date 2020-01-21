@@ -16,6 +16,7 @@ int main()
 {
     int erreur;
     init_moteur();
+    system("clear");
     erreur = menu_ouverture();
     do
     {

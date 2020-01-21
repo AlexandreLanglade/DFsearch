@@ -1,8 +1,8 @@
 #ifndef H_DESCTEXTE
 #define H_DESCTEXTE
 
-//----------------------------------------------------------------------------------------------
-//Structures
+/*----------------------------------------------------------------------------------------------*/
+/*Structures*/
 
 typedef struct etTerme
 {
@@ -22,17 +22,17 @@ typedef struct descripteur_texte_s
 
 typedef struct descripteur_texte_s * Descripteur_texte;
 
-//----------------------------------------------------------------------------------------------
-//En-têtes des fonctions
+/*----------------------------------------------------------------------------------------------*/
+/*En-têtes des fonctions*/
 
-//Descripteurs
+/*Descripteurs*/
 Descripteur_texte init_DescripteurTexte();
 void ajout_terme(Descripteur_texte descripteur, Terme *nouveau);
 void deleteTerme(Descripteur_texte descripteur);
 int isMotExistant(Descripteur_texte descripteur_texte, char *mot);
 void setDtSuiv(Descripteur_texte a, Descripteur_texte b);
 
-//Termes
+/*Termes*/
 Terme* init_Terme();
 
 #endif

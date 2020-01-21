@@ -34,8 +34,9 @@ struct pile_s
  */
 Pile initialiser_pile(int type)
 {
+    Pile res;
     assert(type > 0 && type <= 3);
-    Pile res = (Pile)malloc(sizeof(struct pile_s));
+    res = (Pile)malloc(sizeof(struct pile_s));
     assert(res != NULL);
     res->dt = NULL;
     res->di = NULL;
@@ -89,9 +90,9 @@ int estVide_pile(Pile p)
  */
 void * depiler_pile(Pile p, int type)
 {
+    void * aux;
     assert(p->type == type);
     assert(!estVide_pile(p));
-    void * aux;
     if (p->type == 1)
     {
         aux = p->dt;
@@ -128,5 +129,6 @@ void * top_pile(Pile p, int type)
     } else
     {
         /*return p->da;*/
+        return NULL;
     }  
 }

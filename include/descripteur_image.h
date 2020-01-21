@@ -6,7 +6,7 @@ typedef struct etcouleurs {
     int occurence;
 }   couleurs;
 
-//structure du descripteur 
+/*structure du descripteur */
 typedef struct descripteurIM {
     /*data*/
     int ID;
@@ -15,7 +15,7 @@ typedef struct descripteurIM {
     struct descripteurIM * desc_suiv;
 } descripteur_image_s ;
 
-//pointeur vers un descripteur
+/*pointeur vers un descripteur*/
 typedef descripteur_image_s * Descripteur_image;
 
 /*----------------------- fonctions -------------------------------*/

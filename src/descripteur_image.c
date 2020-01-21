@@ -10,6 +10,10 @@
 
 void ecriture_descripteur_image (descripteur_image_s descripteur, int couleur){
     char * aux0;
+    char * aux;
+    int num;
+    char snum[5];
+    int i;
     FILE * fileDescripteurImage = NULL;
     if (couleur == 1)
     {
@@ -19,20 +23,19 @@ void ecriture_descripteur_image (descripteur_image_s descripteur, int couleur){
     {
         aux0 = "../data/Descripteurs/Images/";
     }  
-    char * aux = (char *)malloc(50*sizeof(char));
+    aux = (char *)malloc(50*sizeof(char));
     strcpy(aux, aux0);
-    int num = descripteur.ID;
-    char snum[5];
+    num = descripteur.ID;
     sprintf(snum, "%d", num);
     strcat(aux, snum);
     fileDescripteurImage = fopen(aux, "w");
     if (fileDescripteurImage==NULL) printf("impossible de créer ce fichier");
 
-//on ecrit l'ID
+/*on ecrit l'ID*/
     fprintf(fileDescripteurImage,"%d \n", descripteur.ID);
 
-//on ecrit le tableau d'intensité et d'occurences
-    for (int i=0; i<256; i++){
+/*on ecrit le tableau d'intensité et d'occurences*/
+    for (i=0; i<256; i++){
         fprintf(fileDescripteurImage, "%d  ",descripteur.listeIntensite[i].intensite);
         fprintf(fileDescripteurImage, "%d \n",descripteur.listeIntensite[i].occurence);
     }
@@ -45,14 +48,15 @@ void ecriture_descripteur_image (descripteur_image_s descripteur, int couleur){
 
 void lecture_descripteur_image (descripteur_image_s descripteur, char *chemindescripteurtxt){
     FILE * fileDescripteurImage = NULL;
+    int i;
     fileDescripteurImage = fopen(chemindescripteurtxt, "r");
     if (fileDescripteurImage==NULL) printf("impossible de lire ce fichier");
 
-    //on vient remplir la structure ID puis boucle pour le tableau d'occurence
+    /*on vient remplir la structure ID puis boucle pour le tableau d'occurence*/
 
     fscanf(fileDescripteurImage, "%d", &descripteur.ID);
 
-    for(int i=0; i<256; i++){
+    for(i = 0; i<256; i++){
         fscanf(fileDescripteurImage, "%d", &descripteur.listeIntensite[i].intensite);
         fscanf(fileDescripteurImage, "%d", &descripteur.listeIntensite[i].occurence);
     }
