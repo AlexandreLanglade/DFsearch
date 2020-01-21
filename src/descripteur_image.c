@@ -35,7 +35,7 @@ void ecriture_descripteur_image (descripteur_image_s descripteur, int couleur){
     fprintf(fileDescripteurImage,"%d \n", descripteur.ID);
 
 /*on ecrit le tableau d'intensité et d'occurences*/
-    for (i=0; i<256; i++){
+    for (i=0; i<512; i++){
         fprintf(fileDescripteurImage, "%d  ",descripteur.listeIntensite[i].intensite);
         fprintf(fileDescripteurImage, "%d \n",descripteur.listeIntensite[i].occurence);
     }
@@ -56,7 +56,7 @@ void lecture_descripteur_image (descripteur_image_s descripteur, char *chemindes
 
     fscanf(fileDescripteurImage, "%d", &descripteur.ID);
 
-    for(i = 0; i<256; i++){
+    for(i = 0; i<512; i++){
         fscanf(fileDescripteurImage, "%d", &descripteur.listeIntensite[i].intensite);
         fscanf(fileDescripteurImage, "%d", &descripteur.listeIntensite[i].occurence);
     }

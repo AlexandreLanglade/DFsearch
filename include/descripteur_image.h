@@ -10,7 +10,7 @@ typedef struct etcouleurs {
 typedef struct descripteurIM {
     /*data*/
     int ID;
-    couleurs listeIntensite [256];
+    couleurs listeIntensite [512];
     /*pointeur vers descripteur suivant*/
     struct descripteurIM * desc_suiv;
 } descripteur_image_s ;
