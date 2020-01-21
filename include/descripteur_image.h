@@ -1,5 +1,5 @@
 #ifndef H_DESCIMAGE
-#define H_DESCIMAGEs
+#define H_DESCIMAGE
 
 typedef struct etcouleurs {
     int intensite;
