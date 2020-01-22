@@ -8,16 +8,16 @@ all: $(EXEC)
 bin/DFsearch: lib/menu.o lib/main.o lib/entree_sortie.o lib/wait.o lib/descripteur_image.o lib/descripteur_texte.o lib/pile.o
 	$(CC) -o $@ $^
 
-lib/main.o: src/main.c include/menu.h
+lib/main.o: src/main.c include/menu.h include/pile.h
 	$(CC) -o $@ -c $< $(CFLAGS)
 
-lib/menu.o: src/menu.c include/entree_sortie.h include/wait.h
+lib/menu.o: src/menu.c include/entree_sortie.h include/wait.h include/pile.h
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 lib/entree_sortie.o: src/entree_sortie.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
-lib/wait.o: src/wait.c
+lib/wait.o: src/wait.c include/pile.h
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 lib/pile.o: src/pile.c include/descripteur_texte.h include/descripteur_image.h

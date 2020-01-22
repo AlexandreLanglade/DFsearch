@@ -91,7 +91,7 @@ void param_recherche()
     } while (choix_param_recherche != 1 && choix_param_recherche != 2 && choix_param_recherche != 3 && choix_param_recherche != 4);
 }
 */
-int menu_texte()
+int menu_texte(Pile t, Pile im, Pile imrgb)
 {
     int choix_textes = 0;
     int code_retour = 0;
@@ -135,7 +135,7 @@ int menu_texte()
     }
 }
 
-int menu_image()
+int menu_image(Pile t, Pile im, Pile imrgb)
 {
     int choix_images = 0;
     int code_retour = 0;
@@ -173,7 +173,7 @@ int menu_image()
     }
 }
 
-int menu_audio()
+int menu_audio(Pile t, Pile im, Pile imrgb)
 {
     int choix_sons = 0;
     int code_retour = 0;
@@ -216,7 +216,7 @@ int menu_audio()
     }
 }
 
-int menu_utilisateur()
+int menu_utilisateur(Pile t, Pile im, Pile imrgb)
 {
     int choix_menu_utilisateur = 0;
     int code_retour = 0;
@@ -233,25 +233,25 @@ int menu_utilisateur()
     if (choix_menu_utilisateur == 1)
     {
         system("clear");
-        code_retour_fils = menu_texte();
+        code_retour_fils = menu_texte(t, im, imrgb);
         return code_retour_fils;
     }
     else if (choix_menu_utilisateur == 2)
     {
         system("clear");
-        code_retour_fils = menu_image();
+        code_retour_fils = menu_image(t, im, imrgb);
         return code_retour_fils;
     }
     else if (choix_menu_utilisateur == 3)
     {
         system("clear");
-        code_retour_fils = menu_audio();
+        code_retour_fils = menu_audio(t, im, imrgb);
         return code_retour_fils;
     }
     else if (choix_menu_utilisateur == 4)
     {
         system("clear");
-        code_retour_fils = menu_ouverture();
+        code_retour_fils = menu_ouverture(t, im, imrgb);
         return code_retour_fils;
     }
     else
@@ -260,7 +260,7 @@ int menu_utilisateur()
     }
 }
 
-int menu_administrateur()
+int menu_administrateur(Pile t, Pile im, Pile imrgb)
 {
     int choix_menu_administrateur = 0;
     int code_retour = 0;
@@ -275,7 +275,7 @@ int menu_administrateur()
         return 12;
     if (choix_menu_administrateur == 1)
     {
-        indexation();
+        indexation(t, im, imrgb);
         return 13;
     }
     else if (choix_menu_administrateur == 2)
@@ -313,7 +313,7 @@ int mdp()
     }
 }
 
-int menu_ouverture()
+int menu_ouverture(Pile t, Pile im, Pile imrgb)
 {
     int choix_mode = 0;
     int code_retour = 0;

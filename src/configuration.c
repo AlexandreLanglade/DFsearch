@@ -230,6 +230,7 @@ void indexation(Pile t, Pile im, Pile imrgb) {
         {
             fscanf(f, "%s", chem);
             fscanf(f, "%s", chem);
+            /*potentiel bug avec \n fin du ls*/
             index_une_image(imrgb, chem, 3);
         }
         fclose(f);

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../include/pile.h"
 
 void recherche_mot_cle()
 {
@@ -37,7 +38,7 @@ void comparaison_audio()
     system("sleep 2");
 }
 
-void indexation()
+void indexation(Pile t, Pile im, Pile imrgb)
 {
     printf("\033[33;01mfct indexation non implémentée\033[00m\n");
     system("sleep 2");
