@@ -14,7 +14,7 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
 {
     int i, compteur;
     char chemin[200];
-    char aux[70];
+    char aux[100];
     FILE * fp;
     indexation(t, im, imrgb);
     

@@ -3,5 +3,6 @@
 
 #include "menu.h"
 #include "pile.h"
+#include "configuration.h"
 
 #endif

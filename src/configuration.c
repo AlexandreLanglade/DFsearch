@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 
 /**
  * @brief Fonction ouvrant le fichier .config
@@ -65,9 +66,10 @@ void afficher_config()
  */
 int get(int x)
 {
-    assert(x > 0 && x <= 8);
+    FILE * f;
     int tab[8];
-    FILE * f = open();
+    assert(x > 0 && x <= 8);
+    f = open();
     fscanf(f, "%d %d %d %d %d %d %d %d", &tab[0], &tab[1], &tab[2], &tab[3], &tab[4], &tab[5], &tab[6], &tab[7]);
     close(f);
     return tab[x-1];
@@ -161,9 +163,10 @@ int getConfig_audio_NbInterv()
  */
 void modifier_config(int param, int valeur)
 {
-    assert(param >= 1 && param <= 5);
     int tab[8];
-    FILE * f = open();
+    FILE * f;
+    assert(param >= 1 && param <= 5);
+    f = open();
     fscanf(f, "%d %d %d %d %d %d %d %d", &tab[0], &tab[1], &tab[2], &tab[3], &tab[4], &tab[5], &tab[6], &tab[7]);
     tab[param+2] = valeur;
     if (param == 1 || param == 2)
@@ -181,73 +184,90 @@ void modifier_config(int param, int valeur)
     close(f);
 }
 
+/**
+ * @brief Fonction d'indexation générale
+ * 
+ * @param t Pile des descripteurs pour les textes
+ * @param im Pile des descripteurs pour les images NB
+ * @param imrgb Pile des descripteurs pour les images RGB
+ */
 void indexation(Pile t, Pile im, Pile imrgb) {
+    int i, compteur;
+    char chemin[200];
+    char aux[100];
+    FILE * f;
+
+    printf("Indexation en cours .....\n");
 
     /* indexation texte */
-    if (getModifTexte() == 1)
+    /*rm link*/
+    system("ls ../data/Corpus/Textes/ | wc -l > templistetexte");
+    system("ls ../data/Corpus/Textes/ >> templistetexte");
+    f = fopen("templistetexte", "r");
+    assert(f != NULL);
+    fscanf(f, "%d", &compteur);
+    for (i = 0; i < compteur; i++)
     {
-        system("ls ../data/Corpus/Textes/ > templistetexte");
-        FILE* f = NULL;
-        f = fopen("templistetexte", "r");
-        assert(f != NULL);
-        char chem[100];
-        while (!feof(f))
-        {
-            fscanf(f, "%s", chem);
-            index_un_texte(t, chem);
-        }
-        fclose(f);
-        system("rm templistetexte");
+        fscanf(f, "%s", aux);
+        strcpy(chemin, "../data/Corpus/Textes/");
+        strcat(chemin, aux);
+        /*index_un_texte(t, chem);*/
     }
-    else
-    {
-        /* code */
-    }
+    fclose(f);
+    system("rm templistetexte");
 
-    /* indexation image */
-    if (getModifImage() == 1)
+    /* indexation image NB */
+    /*rm link*/
+    system("ls ../data/Corpus/Images/NG/ | wc -l > templisteimage");
+    system("ls ../data/Corpus/Images/NG/ >> templisteimage");
+    f = fopen("templisteimage", "r");
+    assert(f != NULL);
+    fscanf(f, "%d", &compteur);
+    for (i = 0; i < compteur/2; i++)
     {
-        system("ls ../data/Corpus/Images/NG > templisteimage");
-        FILE* f = NULL;
-        f = fopen("templisteimage", "r");
-        assert(f != NULL);
-        char chem[100];
-        while (!feof(f))
-        {
-            fscanf(f, "%s", chem);
-            fscanf(f, "%s", chem);
-            index_une_image(im, chem, 1);
-        }
-        fclose(f);
-        system("rm templisteimage");
+        fscanf(f, "%s", aux);
+        fscanf(f, "%s", aux);
+        strcpy(chemin, "../data/Corpus/Images/NG/");
+        strcat(chemin, aux);
+        /*index_une_image(t, chem);*/
+    }
+    fclose(f);
+    system("rm templisteimage");
 
-        system("ls ../data/Corpus/Images/RGB > templisteimage");
-        FILE* f = NULL;
-        f = fopen("templisteimage", "r");
-        assert(f != NULL);
-        char chem[100];
-        while (!feof(f))
-        {
-            fscanf(f, "%s", chem);
-            fscanf(f, "%s", chem);
-            /*potentiel bug avec \n fin du ls*/
-            index_une_image(imrgb, chem, 3);
-        }
-        fclose(f);
-        system("rm templisteimage");
-    }
-    else
+    /* indexation image RGB */
+    /*rm link*/
+    system("ls ../data/Corpus/Images/RGB/ | wc -l > templisteimagergb");
+    system("ls ../data/Corpus/Images/RGB/ >> templisteimagergb");
+    f = fopen("templisteimagergb", "r");
+    assert(f != NULL);
+    fscanf(f, "%d", &compteur);
+    for (i = 0; i < compteur/2; i++)
     {
-        /* code */
+        fscanf(f, "%s", aux);
+        fscanf(f, "%s", aux);
+        strcpy(chemin, "../data/Corpus/Images/RGB/");
+        strcat(chemin, aux);
+        /*index_une_image(t, chem);*/
     }
+    fclose(f);
+    system("rm templisteimagergb");
 
     /* indexation audio */
-    if (getModifAudio() == 1)
+    /*rm link*/
+    system("ls ../data/Corpus/Sons/ | wc -l > templisteson");
+    system("ls ../data/Corpus/Sons/ >> templisteson");
+    f = fopen("templisteson", "r");
+    assert(f != NULL);
+    fscanf(f, "%d", &compteur);
+    for (i = 0; i < compteur/3; i++)
     {
-        /* code */
+        fscanf(f, "%s", aux);
+        fscanf(f, "%s", aux);
+        strcpy(chemin, "../data/Corpus/Sons/");
+        strcat(chemin, aux);
+        /*index_un_son(t, chem);*/
+        fscanf(f, "%s", aux);
     }
-    else
-    {
-        /* code */
-    }
+    fclose(f);
+    system("rm templisteson");
 }

@@ -4,6 +4,7 @@
 #include "pile.h"
 #include "wait.h"
 #include "entree_sortie.h"
+#include "configuration.h"
 
 int menu_texte(Pile t, Pile im, Pile imrgb);
 int menu_image(Pile t, Pile im, Pile imrgb);

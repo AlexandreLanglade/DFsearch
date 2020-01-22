@@ -38,12 +38,6 @@ void comparaison_audio()
     system("sleep 2");
 }
 
-void indexation(Pile t, Pile im, Pile imrgb)
-{
-    printf("\033[33;01mfct indexation non implémentée\033[00m\n");
-    system("sleep 2");
-}
-
 void indexation_un_doc()
 {
     printf("\033[33;01mfct indexation un doc non implémentée\033[00m\n");

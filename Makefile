@@ -5,13 +5,13 @@ EXEC=bin/DFsearch
 
 all: $(EXEC)
 
-bin/DFsearch: lib/menu.o lib/main.o lib/entree_sortie.o lib/wait.o lib/descripteur_image.o lib/descripteur_texte.o lib/pile.o
+bin/DFsearch: lib/menu.o lib/main.o lib/entree_sortie.o lib/wait.o lib/descripteur_image.o lib/descripteur_texte.o lib/pile.o lib/configuration.o
 	$(CC) -o $@ $^
 
-lib/main.o: src/main.c include/menu.h include/pile.h
+lib/main.o: src/main.c include/menu.h include/pile.h include/configuration.h
 	$(CC) -o $@ -c $< $(CFLAGS)
 
-lib/menu.o: src/menu.c include/entree_sortie.h include/wait.h include/pile.h
+lib/menu.o: src/menu.c include/entree_sortie.h include/wait.h include/pile.h include/configuration.h
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 lib/entree_sortie.o: src/entree_sortie.c
@@ -27,6 +27,9 @@ lib/descripteur_image.o: src/descripteur_image.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 lib/descripteur_texte.o: src/descripteur_texte.c
+	$(CC) -o $@ -c $< $(CFLAGS)
+
+lib/configuration.o : src/configuration.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
