@@ -17,23 +17,25 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
     char chemin[200];
     char aux[100];
     FILE * fp;
+    int c = 0;
+    int d = 0;
+    int e = 0;
+    int f = 0;
 
-    int need_index = 0;
-/*
     system("ls ../data/Descripteurs/Textes/ | wc -l > temp");
     system("ls ../data/Corpus/Textes/ | wc -l >> temp");
     fp = fopen("temp", "r");
     fscanf(fp, "%d", &a);
     fscanf(fp, "%d", &b);
-    if (a != b) need_index++;
+    if (a != b) c++;
     fclose(fp);
-*/
+
     system("ls ../data/Descripteurs/Images/ | wc -l > temp");
     system("ls ../data/Corpus/Images/NG/ | wc -l >> temp");
     fp = fopen("temp", "r");
     fscanf(fp, "%d", &a);
     fscanf(fp, "%d", &b);
-    if (a != b/2) need_index++;
+    if (a != b/2) d++;
     fclose(fp);
 
     system("ls ../data/Descripteurs/ImagesRGB/ | wc -l > temp");
@@ -41,7 +43,7 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
     fp = fopen("temp", "r");
     fscanf(fp, "%d", &a);
     fscanf(fp, "%d", &b);
-    if (a != b/2) need_index++;
+    if (a != b/2) e++;
     fclose(fp);
 /*
     system("ls ../data/Descripteurs/Sons/ | wc -l > temp");
@@ -49,18 +51,18 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
     fp = fopen("temp", "r");
     fscanf(fp, "%d", &a);
     fscanf(fp, "%d", &b);
-    if (a != b/3) need_index++;
+    if (a != b/3) f++;
     fclose(fp);
 */
     system("rm temp");
 
-    if (need_index != 0) {
-        system("rm ../data/Descripteurs/Textes/*");
-        system("rm ../data/Descripteurs/Images/*");
-        system("rm ../data/Descripteurs/ImagesRGB/*");
-        system("rm ../data/Descripteurs/Sons/*");
+    if (c+d+e+f != 0) {
+        if (c != 0) system("rm ../data/Descripteurs/Textes/*");
+        if (d != 0) system("rm ../data/Descripteurs/Images/*");
+        if (e != 0) system("rm ../data/Descripteurs/ImagesRGB/*");
+        if (f != 0) system("rm ../data/Descripteurs/Sons/*");
         system("clear");
-        indexation(t, im, imrgb);
+        indexation(t, im, imrgb, c, d, e, f);
     }
     else {
         /* Texte */ 
@@ -111,8 +113,13 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
 void close_moteur(Pile t, Pile im, Pile imrgb)
 {
     Descripteur_image di;
+    Descripteur_texte dt;
     /*Texte*/
-
+    while (!estVide_pile(t))
+    {
+        dt = (Descripteur_texte)depiler_pile(t, 1);
+        ecrire_fich_texte(dt);
+    }
     /*Image*/
     while (!estVide_pile(im))
     {

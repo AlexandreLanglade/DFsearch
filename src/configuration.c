@@ -191,83 +191,96 @@ void modifier_config(int param, int valeur)
  * @param im Pile des descripteurs pour les images NB
  * @param imrgb Pile des descripteurs pour les images RGB
  */
-void indexation(Pile t, Pile im, Pile imrgb) {
+void indexation(Pile t, Pile im, Pile imrgb, int c, int d, int e, int fbis) {
     int i, compteur;
     char chemin[200];
     char aux[100];
     FILE * f;
 
     printf("Indexation en cours .....\n");
-
-    /* indexation texte */
-    /*rm link*/
-    system("ls ../data/Corpus/Textes/ | wc -l > templistetexte");
-    system("ls ../data/Corpus/Textes/ >> templistetexte");
-    f = fopen("templistetexte", "r");
-    assert(f != NULL);
-    fscanf(f, "%d", &compteur);
-    for (i = 0; i < compteur; i++)
+    if (d == 1)
     {
-        fscanf(f, "%s", aux);
-        strcpy(chemin, "../data/Corpus/Textes/");
-        strcat(chemin, aux);
-        /*index_un_texte(t, chem);*/
+        /* indexation image NB */
+        system("rm ../data/listing_desc_imageNB.txt");
+        system("ls ../data/Corpus/Images/NG/ | wc -l > templisteimage");
+        system("ls ../data/Corpus/Images/NG/ >> templisteimage");
+        f = fopen("templisteimage", "r");
+        assert(f != NULL);
+        fscanf(f, "%d", &compteur);
+        for (i = 0; i < compteur/2; i++)
+        {
+            fscanf(f, "%s", aux);
+            fscanf(f, "%s", aux);
+            strcpy(chemin, "../data/Corpus/Images/NG/");
+            strcat(chemin, aux);
+            index_une_image(im, chemin, 1);
+        }
+        fclose(f);
+        system("rm templisteimage");
     }
-    fclose(f);
-    system("rm templistetexte");
-
-    /* indexation image NB */
-    system("rm ../data/listing_desc_imageNB.txt");
-    system("ls ../data/Corpus/Images/NG/ | wc -l > templisteimage");
-    system("ls ../data/Corpus/Images/NG/ >> templisteimage");
-    f = fopen("templisteimage", "r");
-    assert(f != NULL);
-    fscanf(f, "%d", &compteur);
-    for (i = 0; i < compteur/2; i++)
+    
+    
+    if (e == 1)
     {
-        fscanf(f, "%s", aux);
-        fscanf(f, "%s", aux);
-        strcpy(chemin, "../data/Corpus/Images/NG/");
-        strcat(chemin, aux);
-        index_une_image(im, chemin, 1);
+        /* indexation image RGB */
+        system("rm ../data/listing_desc_imageRGB.txt");
+        system("ls ../data/Corpus/Images/RGB/ | wc -l > templisteimagergb");
+        system("ls ../data/Corpus/Images/RGB/ >> templisteimagergb");
+        f = fopen("templisteimagergb", "r");
+        assert(f != NULL);
+        fscanf(f, "%d", &compteur);
+        for (i = 0; i < compteur/2; i++)
+        {
+            fscanf(f, "%s", aux);
+            fscanf(f, "%s", aux);
+            strcpy(chemin, "../data/Corpus/Images/RGB/");
+            strcat(chemin, aux);
+            index_une_image(imrgb, chemin, 3);
+        }
+        fclose(f);
+        system("rm templisteimagergb");
     }
-    fclose(f);
-    system("rm templisteimage");
 
-    /* indexation image RGB */
-    system("rm ../data/listing_desc_imageRGB.txt");
-    system("ls ../data/Corpus/Images/RGB/ | wc -l > templisteimagergb");
-    system("ls ../data/Corpus/Images/RGB/ >> templisteimagergb");
-    f = fopen("templisteimagergb", "r");
-    assert(f != NULL);
-    fscanf(f, "%d", &compteur);
-    for (i = 0; i < compteur/2; i++)
+    if (c == 1)
     {
-        fscanf(f, "%s", aux);
-        fscanf(f, "%s", aux);
-        strcpy(chemin, "../data/Corpus/Images/RGB/");
-        strcat(chemin, aux);
-        index_une_image(imrgb, chemin, 3);
+        /* indexation texte */
+        system("rm ../data/links_txt");
+        system("ls ../data/Corpus/Textes/ | wc -l > templistetexte");
+        system("ls ../data/Corpus/Textes/ >> templistetexte");
+        f = fopen("templistetexte", "r");
+        assert(f != NULL);
+        fscanf(f, "%d", &compteur);
+        for (i = 0; i < compteur; i++)
+        {
+            fscanf(f, "%s", aux);
+            strcpy(chemin, "../data/Corpus/Textes/");
+            strcat(chemin, aux);
+            index_un_texte(chemin, t);
+        }
+        fclose(f);
+        system("rm templistetexte");
     }
-    fclose(f);
-    system("rm templisteimagergb");
-
-    /* indexation audio */
-    /*rm link*/
-    system("ls ../data/Corpus/Sons/ | wc -l > templisteson");
-    system("ls ../data/Corpus/Sons/ >> templisteson");
-    f = fopen("templisteson", "r");
-    assert(f != NULL);
-    fscanf(f, "%d", &compteur);
-    for (i = 0; i < compteur/3; i++)
+    
+    if (fbis == 1)
     {
-        fscanf(f, "%s", aux);
-        fscanf(f, "%s", aux);
-        strcpy(chemin, "../data/Corpus/Sons/");
-        strcat(chemin, aux);
-        /*index_un_son(t, chem);*/
-        fscanf(f, "%s", aux);
+        /* indexation audio */
+        /*rm link*/
+        system("ls ../data/Corpus/Sons/ | wc -l > templisteson");
+        system("ls ../data/Corpus/Sons/ >> templisteson");
+        f = fopen("templisteson", "r");
+        assert(f != NULL);
+        fscanf(f, "%d", &compteur);
+        for (i = 0; i < compteur/3; i++)
+        {
+            fscanf(f, "%s", aux);
+            fscanf(f, "%s", aux);
+            strcpy(chemin, "../data/Corpus/Sons/");
+            strcat(chemin, aux);
+            /*index_un_son(t, chem);*/
+            fscanf(f, "%s", aux);
+        }
+        fclose(f);
+        system("rm templisteson");
     }
-    fclose(f);
-    system("rm templisteson");
+          
 }
