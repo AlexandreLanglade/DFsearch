@@ -217,7 +217,7 @@ void indexation(Pile t, Pile im, Pile imrgb) {
     system("rm templistetexte");
 
     /* indexation image NB */
-    /*rm link*/
+    system("rm ../data/listing_desc_imageNB.txt");
     system("ls ../data/Corpus/Images/NG/ | wc -l > templisteimage");
     system("ls ../data/Corpus/Images/NG/ >> templisteimage");
     f = fopen("templisteimage", "r");
@@ -229,13 +229,13 @@ void indexation(Pile t, Pile im, Pile imrgb) {
         fscanf(f, "%s", aux);
         strcpy(chemin, "../data/Corpus/Images/NG/");
         strcat(chemin, aux);
-        /*index_une_image(t, chem);*/
+        index_une_image(im, chemin, 1);
     }
     fclose(f);
     system("rm templisteimage");
 
     /* indexation image RGB */
-    /*rm link*/
+    system("rm ../data/listing_desc_imageRGB.txt");
     system("ls ../data/Corpus/Images/RGB/ | wc -l > templisteimagergb");
     system("ls ../data/Corpus/Images/RGB/ >> templisteimagergb");
     f = fopen("templisteimagergb", "r");
@@ -247,7 +247,7 @@ void indexation(Pile t, Pile im, Pile imrgb) {
         fscanf(f, "%s", aux);
         strcpy(chemin, "../data/Corpus/Images/RGB/");
         strcat(chemin, aux);
-        /*index_une_image(t, chem);*/
+        index_une_image(imrgb, chemin, 3);
     }
     fclose(f);
     system("rm templisteimagergb");
