@@ -1,0 +1,13 @@
+0  ../data/Corpus/Images/NG/51.txt 
+1  ../data/Corpus/Images/NG/52.txt 
+2  ../data/Corpus/Images/NG/53.txt 
+3  ../data/Corpus/Images/NG/54.txt 
+4  ../data/Corpus/Images/NG/55.txt 
+5  ../data/Corpus/Images/NG/56.txt 
+6  ../data/Corpus/Images/NG/57.txt 
+7  ../data/Corpus/Images/NG/58.txt 
+8  ../data/Corpus/Images/NG/59.txt 
+9  ../data/Corpus/Images/NG/60.txt 
+10  ../data/Corpus/Images/NG/61.txt 
+11  ../data/Corpus/Images/NG/62.txt 
+12  ../data/Corpus/Images/NG/63.txt 
