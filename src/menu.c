@@ -275,7 +275,7 @@ int menu_administrateur(Pile t, Pile im, Pile imrgb)
         return 12;
     if (choix_menu_administrateur == 1)
     {
-        indexation(t, im, imrgb);
+        indexation(t, im, imrgb, 1, 1, 1, 1);
         return 13;
     }
     else if (choix_menu_administrateur == 2)

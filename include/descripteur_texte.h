@@ -32,6 +32,9 @@ void deleteTerme(Descripteur_texte descripteur);
 int isMotExistant(Descripteur_texte descripteur_texte, char *mot);
 void setDtSuiv(Descripteur_texte a, Descripteur_texte b);
 
+void ecrire_fich_texte(Descripteur_texte descripteur);
+Descripteur_texte lire_fich_texte(char * chemin);
+
 /*Termes*/
 Terme* init_Terme();
 

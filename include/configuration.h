@@ -31,6 +31,6 @@ int getConfig_audio_NbInterv();
 
 void modifier_config(int param, int valeur);
 
-void indexation(Pile t, Pile im, Pile imrgb);
+void indexation(Pile t, Pile im, Pile imrgb, int c, int d, int e, int f);
 
 #endif

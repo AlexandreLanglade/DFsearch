@@ -125,3 +125,82 @@ int isMotExistant(Descripteur_texte descripteur,char *mot)
 void setDtSuiv(Descripteur_texte a, Descripteur_texte b) {
     a->suivant = b;
 }
+
+/*Permet de lire une structure descripteur et de remplir un fichier .txt descripteur*/
+void ecrire_fich_texte(Descripteur_texte descripteur){ 
+    struct etTerme *aux;
+    FILE *fichier =NULL;
+    char nom[5];
+    char chemin[50]="../data/Descripteurs/Textes/";
+    aux = descripteur->listeDesTermes;
+
+    sprintf(nom, "%d", descripteur->identifiant);
+    strcat(chemin,nom);
+    
+    fichier = fopen(chemin,"w");                                  /*on crée un fichier texte qui a le nom du qu'on lui donne en paramètres*/
+
+    if(fichier != NULL && descripteur != NULL)
+    {
+        fprintf(fichier,"%d\n",descripteur->identifiant);              /*on écrit dans le fichier texte l'identifiant qu'il y a dans la structure*/
+        fprintf(fichier,"%d\n",descripteur->nbMots);                   /*on écrit dans le ficier texte le nombre de mots du texte d'origine*/
+        fprintf(fichier,"%d\n",descripteur->nbTermes);                   
+
+
+        while (aux != NULL)  /*Tant que la liste contient des termes*/
+        {
+            fprintf(fichier,"%s ",aux->mot);
+            fprintf(fichier,"%d\n",aux->nbOccurences);
+
+            aux = aux->termeSuivant;
+        }
+
+        
+        fclose(fichier);
+
+    }
+
+}
+
+/*Permet de lire un fichier .txt descripteur et de remplir une structure descripteur*/
+Descripteur_texte lire_fich_texte(char * chemin){
+    int mots,id,occu,termes,i;
+    FILE *fichier =NULL;
+    Terme *nouveauTerme;                            /*On crée un nouveau terme */
+
+    /*Declaration et initialisaiton d'un descripteur*/
+    Descripteur_texte descripteur;
+    descripteur = init_DescripteurTexte();
+
+    fichier = fopen(chemin,"r");                                  
+
+    if(fichier != NULL && descripteur != NULL)
+    {
+        fscanf(fichier,"%d %d %d",&id,&mots,&termes);
+    
+        descripteur->identifiant = id;
+        printf("L'id est : %d\n",id);
+        descripteur->nbMots = mots;
+        printf("Le nombre de mots est : %d\n",mots);
+        /*descripteur->nbTermes=termes;*/
+        printf("Le nombre de termes est : %d\n",termes);
+
+       for(i=0; i<termes; i++)
+        {
+            
+            char * motActuel = (char*)malloc(200*sizeof(char));
+            fscanf(fichier,"%s %d",motActuel,&occu);
+            
+            nouveauTerme = init_Terme();
+
+            nouveauTerme ->mot = motActuel;                 /*On rempli la structure avec le mot et le nombre d'occurence du mot*/
+            nouveauTerme ->nbOccurences = occu;
+
+            ajout_terme(descripteur,nouveauTerme);              /*On ajoute le nouveau terme à la structure descripteur*/
+        }
+
+    }
+    fclose(fichier);
+
+    return descripteur;
+    
+}

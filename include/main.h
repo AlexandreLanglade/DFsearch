@@ -5,5 +5,6 @@
 #include "pile.h"
 #include "configuration.h"
 #include "descripteur_image.h"
+#include "descripteur_texte.h"
 
 #endif
