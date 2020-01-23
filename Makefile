@@ -1,14 +1,14 @@
 CC=gcc
 CFLAGS=-W -Wall -ansi -pedantic
-LDFLAGS=-lm
+LDFLAGS=
 EXEC=bin/DFsearch
 
 all: $(EXEC)
 
 bin/DFsearch: lib/menu.o lib/main.o lib/entree_sortie.o lib/wait.o lib/descripteur_image.o lib/descripteur_texte.o lib/pile.o lib/configuration.o lib/quantification.o lib/indexation_image.o -lm
-	$(CC) -o $@ $^
+	$(CC) -g -o $@ $^
 
-lib/main.o: src/main.c include/menu.h include/pile.h include/configuration.h
+lib/main.o: src/main.c include/menu.h include/pile.h include/configuration.h include/descripteur_image.h
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 lib/menu.o: src/menu.c include/entree_sortie.h include/wait.h include/pile.h include/configuration.h

@@ -4,5 +4,6 @@
 #include "menu.h"
 #include "pile.h"
 #include "configuration.h"
+#include "descripteur_image.h"
 
 #endif

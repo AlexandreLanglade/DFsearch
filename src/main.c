@@ -12,59 +12,118 @@
  */
 void init_moteur(Pile t, Pile im, Pile imrgb)
 {
+    int a, b;
     int i, compteur;
     char chemin[200];
     char aux[100];
     FILE * fp;
-    indexation(t, im, imrgb);
-    
-    /* Texte */ 
+
+    int need_index = 0;
+/*
     system("ls ../data/Descripteurs/Textes/ | wc -l > temp");
-    system("ls ../data/Descripteurs/Textes/ >> temp");
+    system("ls ../data/Corpus/Textes/ | wc -l >> temp");
     fp = fopen("temp", "r");
-    fscanf(fp, "%d", &compteur);
-    for (i = 0; i < compteur; i++)
-    {
-        fscanf(fp, "%s", aux);
-        strcpy(chemin, "../data/Descripteurs/Textes/");
-        strcat(chemin, aux);
-        /*lecture texte + empiler t*/
-    }  
+    fscanf(fp, "%d", &a);
+    fscanf(fp, "%d", &b);
+    if (a != b) need_index++;
     fclose(fp);
-
-    /* Image NB */
+*/
     system("ls ../data/Descripteurs/Images/ | wc -l > temp");
-    system("ls ../data/Descripteurs/Images/ >> temp");
+    system("ls ../data/Corpus/Images/NG/ | wc -l >> temp");
     fp = fopen("temp", "r");
-    fscanf(fp, "%d", &compteur);
-    for (i = 0; i < compteur; i++)
-    {
-        fscanf(fp, "%s", aux);
-        strcpy(chemin, "../data/Descripteurs/Images/");
-        strcat(chemin, aux);
-        /*lecture image + empiler im*/
-    }  
+    fscanf(fp, "%d", &a);
+    fscanf(fp, "%d", &b);
+    if (a != b/2) need_index++;
     fclose(fp);
 
-    /* Image rgb */
     system("ls ../data/Descripteurs/ImagesRGB/ | wc -l > temp");
-    system("ls ../data/Descripteurs/ImagesRGB/ >> temp");
+    system("ls ../data/Corpus/Images/RGB/ | wc -l >> temp");
     fp = fopen("temp", "r");
-    fscanf(fp, "%d", &compteur);
-    for (i = 0; i < compteur; i++)
-    {
-        fscanf(fp, "%s", aux);
-        strcpy(chemin, "../data/Descripteurs/ImagesRGB/");
-        strcat(chemin, aux);
-        /*lecture texte + empiler t*/
-    }  
+    fscanf(fp, "%d", &a);
+    fscanf(fp, "%d", &b);
+    if (a != b/2) need_index++;
     fclose(fp);
+/*
+    system("ls ../data/Descripteurs/Sons/ | wc -l > temp");
+    system("ls ../data/Corpus/Sons/ | wc -l >> temp");
+    fp = fopen("temp", "r");
+    fscanf(fp, "%d", &a);
+    fscanf(fp, "%d", &b);
+    if (a != b/3) need_index++;
+    fclose(fp);
+*/
     system("rm temp");
+
+    if (need_index != 0) {
+        system("rm ../data/Descripteurs/Textes/*");
+        system("rm ../data/Descripteurs/Images/*");
+        system("rm ../data/Descripteurs/ImagesRGB/*");
+        indexation(t, im, imrgb);
+    }
+    else {
+        /* Texte */ 
+        system("ls ../data/Descripteurs/Textes/ | wc -l > temp");
+        system("ls ../data/Descripteurs/Textes/ >> temp");
+        fp = fopen("temp", "r");
+        fscanf(fp, "%d", &compteur);
+        for (i = 0; i < compteur; i++)
+        {
+            fscanf(fp, "%s", aux);
+            strcpy(chemin, "../data/Descripteurs/Textes/");
+            strcat(chemin, aux);
+            /*lecture texte + empiler t*/
+        }  
+        fclose(fp);
+
+        /* Image NB */
+        system("ls ../data/Descripteurs/Images/ | wc -l > temp");
+        system("ls ../data/Descripteurs/Images/ >> temp");
+        fp = fopen("temp", "r");
+        fscanf(fp, "%d", &compteur);
+        for (i = 0; i < compteur; i++)
+        {
+            fscanf(fp, "%s", aux);
+            strcpy(chemin, "../data/Descripteurs/Images/");
+            strcat(chemin, aux);
+            /*lecture image + empiler im*/
+        }  
+        fclose(fp);
+
+        /* Image rgb */
+        system("ls ../data/Descripteurs/ImagesRGB/ | wc -l > temp");
+        system("ls ../data/Descripteurs/ImagesRGB/ >> temp");
+        fp = fopen("temp", "r");
+        fscanf(fp, "%d", &compteur);
+        for (i = 0; i < compteur; i++)
+        {
+            fscanf(fp, "%s", aux);
+            strcpy(chemin, "../data/Descripteurs/ImagesRGB/");
+            strcat(chemin, aux);
+            /*lecture texte + empiler t*/
+        }  
+        fclose(fp);
+        system("rm temp");
+    }
 }
 
-void close_moteur()
+void close_moteur(Pile t, Pile im, Pile imrgb)
 {
+    Descripteur_image di;
+    /*Texte*/
 
+    /*Image*/
+    while (!estVide_pile(im))
+    {
+        di = (Descripteur_image)depiler_pile(im, 2);
+        ecriture_descripteur_image(*di, 0);
+    }
+
+    /*Image RGB*/
+    while (!estVide_pile(imrgb))
+    {
+        di = (Descripteur_image)depiler_pile(imrgb, 2);
+        ecriture_descripteur_image(*di, 1);
+    }
 }
 
 int main()
@@ -161,6 +220,6 @@ int main()
         }
         
     } while (erreur != 0);
-    close_moteur();
+    close_moteur(t, im, imrgb);
     return 0;
 }
