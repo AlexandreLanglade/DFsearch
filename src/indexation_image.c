@@ -11,6 +11,7 @@ Descripteur_image initDescript(){
     int i;
     Descripteur_image descripteur = (Descripteur_image)malloc(sizeof(descripteur_image_s));
     descripteur->ID = 0;
+    descripteur->desc_suiv = NULL;
     for(i=0; i<512; i++){
         descripteur->listeIntensite[i].intensite=i;
         descripteur->listeIntensite[i].occurence=0;

@@ -58,6 +58,8 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
         system("rm ../data/Descripteurs/Textes/*");
         system("rm ../data/Descripteurs/Images/*");
         system("rm ../data/Descripteurs/ImagesRGB/*");
+        system("rm ../data/Descripteurs/Sons/*");
+        system("clear");
         indexation(t, im, imrgb);
     }
     else {
@@ -117,7 +119,6 @@ void close_moteur(Pile t, Pile im, Pile imrgb)
         di = (Descripteur_image)depiler_pile(im, 2);
         ecriture_descripteur_image(*di, 0);
     }
-
     /*Image RGB*/
     while (!estVide_pile(imrgb))
     {
