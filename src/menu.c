@@ -317,6 +317,7 @@ int menu_administrateur(Pile t, Pile im, Pile imrgb)
 int mdp()
 {
     char * mdp;
+    printf("(3 tentatives puis redirection menu utilisateur)\n");
     printf("Mot de passe : "); 
     lire_string(&mdp);
     if (strcmp(mdp, "admin") == 0)

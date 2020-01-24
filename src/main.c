@@ -144,6 +144,7 @@ void close_moteur(Pile t, Pile im, Pile imrgb)
 
 int main()
 {
+    int chance_mdp = 0;
     int erreur;
     Pile t = initialiser_pile(1);
     Pile im = initialiser_pile(2);
@@ -216,9 +217,17 @@ int main()
 
         case 11:
             system("clear");
-            printf ("\033[31;01m(Err) Mot de passe incorrect\033[00m\n");
-            erreur = menu_ouverture(t, im, imrgb);
-            break;
+            if (chance_mdp < 2)
+            {
+                printf ("\033[31;01m(Err) Mot de passe incorrect\033[00m\n");
+                chance_mdp++;
+                erreur = mdp();
+                break;
+            } else {
+                chance_mdp = 0;
+                erreur = menu_ouverture(t, im, imrgb);
+                break;
+            }  
 
         case 12:
             system("clear");
