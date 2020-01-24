@@ -89,6 +89,8 @@ void deleteBalises(char *chemin)
     system("sed -i 's/\\\"/ /g' tata.txt");
     system("sed -i 's/(//g' tata.txt");
     system("sed -i 's/)//g' tata.txt");
+    system("sed -i 's/\\%/ /g' tata.txt");
+    system("sed -i 's/[0123456789]/ /g' tata.txt");
 
 
     system("cat tata.txt |tr  A-Z a-z > titi.txt"); /*On transforme les majuscules en minuscules */

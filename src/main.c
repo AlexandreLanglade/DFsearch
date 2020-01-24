@@ -225,7 +225,7 @@ int main()
                 break;
             } else {
                 chance_mdp = 0;
-                erreur = menu_ouverture(t, im, imrgb);
+                erreur = menu_utilisateur(t, im, imrgb);
                 break;
             }  
 
