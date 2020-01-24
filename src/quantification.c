@@ -74,8 +74,11 @@ int** quantif_3_matrices (int** R, int** G, int** B, int lignes, int colonnes){
             binG = IntToBinaire(G[i][j]);
             binB = IntToBinaire(B[i][j]);
             binaire_quantifie =quantifier_binaires(binR, binG, binB);
+            free(binB);
+            free(binR);
+            free(binG);
             test[i][j]=binaireToInt(binaire_quantifie);
-        
+            free(binaire_quantifie);
         }
     }
     return test;
@@ -173,7 +176,9 @@ struct RGBQuantifie_s quantification (char * adresse_img){
 /*remplissage du nouveau tab 2D (calculs)*/
 /*on quantif_3_matrices nos R, G et B. ordre : boucle qui pour chaque entier du *tab, transforme en binaire, quantifie, puis reconvertie chaque valeurs en entier*/
     imageQuantifie.tab= quantif_3_matrices(R, G, B,lignes, colonnes);
-    
+    free(B);
+    free(R);
+    free(G);
     return imageQuantifie;
 }
 
