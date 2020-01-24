@@ -21,6 +21,8 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
     int d = 0;
     int e = 0;
     int f = 0;
+    Descripteur_image di;
+    Descripteur_texte dt;
 
     system("ls ../data/Descripteurs/Textes/ | wc -l > temp");
     system("ls ../data/Corpus/Textes/ | wc -l >> temp");
@@ -75,7 +77,9 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
             fscanf(fp, "%s", aux);
             strcpy(chemin, "../data/Descripteurs/Textes/");
             strcat(chemin, aux);
-            /*lecture texte + empiler t*/
+            dt = init_DescripteurTexte();
+            dt = lire_fich_texte(chemin);
+            empiler_pile(t, dt, 1);
         }  
         fclose(fp);
 
@@ -89,7 +93,9 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
             fscanf(fp, "%s", aux);
             strcpy(chemin, "../data/Descripteurs/Images/");
             strcat(chemin, aux);
-            /*lecture image + empiler im*/
+            di = initDescript();
+            lecture_descripteur_image(*di, chemin);
+            empiler_pile(im, di, 2);
         }  
         fclose(fp);
 
@@ -103,7 +109,9 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
             fscanf(fp, "%s", aux);
             strcpy(chemin, "../data/Descripteurs/ImagesRGB/");
             strcat(chemin, aux);
-            /*lecture texte + empiler t*/
+            di = initDescript();
+            lecture_descripteur_image(*di, chemin);
+            empiler_pile(imrgb, di, 2);
         }  
         fclose(fp);
         system("rm temp");
