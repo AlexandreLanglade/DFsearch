@@ -107,6 +107,7 @@ int menu_texte(Pile t, Pile im, Pile imrgb)
         return 5;
     if (choix_textes == 1)
     {
+        printf("Veuillez entrer un mot clé : ");
         code_retour = lire_string(&mot_cle);
         if (code_retour == 0)
         {
@@ -117,6 +118,7 @@ int menu_texte(Pile t, Pile im, Pile imrgb)
     }
     else if (choix_textes == 2)
     {
+        printf("Veuillez entrer le chemin du fichier : ");
         code_retour = lire_un_chemin(&chemin);
         if (code_retour == 0)
         {
@@ -155,6 +157,7 @@ int menu_image(Pile t, Pile im, Pile imrgb)
     }
     else if (choix_images == 2)
     {
+        printf("Veuillez entrer le chemin du fichier : ");
         code_retour = lire_un_chemin(&chemin);
         if (code_retour == 0)
         {
@@ -188,6 +191,7 @@ int menu_audio(Pile t, Pile im, Pile imrgb)
         return 7;
     if (choix_sons == 1)
     {
+        printf("Veuillez entrer le chemin du fichier : ");
         code_retour = lire_un_chemin(&chemin);
         if (code_retour == 0)
         {
@@ -198,6 +202,7 @@ int menu_audio(Pile t, Pile im, Pile imrgb)
     }
     else if (choix_sons == 2)
     {
+        printf("Veuillez entrer le chemin du fichier : ");
         code_retour = lire_un_chemin(&chemin);
         if (code_retour == 0)
         {
@@ -262,6 +267,8 @@ int menu_utilisateur(Pile t, Pile im, Pile imrgb)
 
 int menu_administrateur(Pile t, Pile im, Pile imrgb)
 {
+    char rep;
+    int a, b;
     int choix_menu_administrateur = 0;
     int code_retour = 0;
     printf("Menu administrateur :\n");
@@ -275,7 +282,7 @@ int menu_administrateur(Pile t, Pile im, Pile imrgb)
         return 12;
     if (choix_menu_administrateur == 1)
     {
-        indexation(t, im, imrgb, 1, 1, 1, 1);
+        indexation_un_doc();
         return 13;
     }
     else if (choix_menu_administrateur == 2)
@@ -285,7 +292,16 @@ int menu_administrateur(Pile t, Pile im, Pile imrgb)
     }
     else if (choix_menu_administrateur == 3)
     {
-        modif_config();
+        afficher_config();
+        printf("\n\n Modifier (o/n) ? ");
+        scanf("%1s", &rep);
+        if (rep == 'o') {
+            printf("\n\nEntrez le numéro du paramètre à modifier : ");
+            lire_un_entier(&a, 1, 5);
+            printf("\n\nEntrez la nouvelle valeur du paramètre (Non sécurisé): ");
+            scanf("%d", &b);
+            modifier_config(a, b);
+        }
         return 13;
     }
     else if (choix_menu_administrateur == 4)

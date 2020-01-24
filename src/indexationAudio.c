@@ -69,10 +69,10 @@ int getIntervallesM(float **intervallesM,unsigned int m){
 }
 
 void afficherValeurs(float *valeurs,unsigned long nbrValeurs){
-    unsigned int i = 0;
+    /*unsigned int i = 0;
     for(i=0;i<nbrValeurs;i+=10){
         printf("valeur %d = %f\n",i,valeurs[i]);
-    }
+    }*/
 }
 
 	/* ETAPE 2 : ECHANTILLONNAGE*/

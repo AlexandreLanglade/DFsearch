@@ -43,9 +43,3 @@ void indexation_un_doc()
     printf("\033[33;01mfct indexation un doc non implémentée\033[00m\n");
     system("sleep 2");
 }
-
-void modif_config()
-{
-    printf("\033[33;01mfct modif config non implémentée\033[00m\n");
-    system("sleep 2");
-}
