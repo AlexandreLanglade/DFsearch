@@ -301,6 +301,17 @@ int menu_administrateur(Pile t, Pile im, Pile imrgb)
             printf("\n\nEntrez la nouvelle valeur du paramètre (Non sécurisé): ");
             scanf("%d", &b);
             modifier_config(a, b);
+            if (a == 1 || a == 2)
+            {
+                system("rm ../data/Descripteurs/Textes/*");
+            } else if (a == 3) {
+                system("rm ../data/Descripteurs/Images/*");
+                system("rm ../data/Descripteurs/ImagesRGB/*");
+            } else if (a == 4 || a == 5) {
+                system("rm ../data/Descripteurs/Sons/*");
+            } else {
+                
+            }
         }
         return 13;
     }
