@@ -5,7 +5,7 @@ EXEC=bin/DFsearch
 
 all: $(EXEC)
 
-bin/DFsearch: lib/menu.o lib/main.o lib/entree_sortie.o lib/wait.o lib/descripteur_image.o lib/descripteur_texte.o lib/pile.o lib/configuration.o lib/quantification.o lib/indexation_image.o lib/indexation_texte.o -lm
+bin/DFsearch: lib/menu.o lib/main.o lib/entree_sortie.o lib/wait.o lib/descripteur_image.o lib/descripteur_texte.o lib/pile.o lib/configuration.o lib/quantification.o lib/indexation_image.o lib/indexation_texte.o lib/indexationAudio.o lib/structures.o lib/index_un_son.o -lm
 	$(CC) -g -o $@ $^
 
 lib/main.o: src/main.c include/menu.h include/pile.h include/configuration.h include/descripteur_image.h include/descripteur_texte.h
@@ -29,7 +29,7 @@ lib/descripteur_image.o: src/descripteur_image.c
 lib/descripteur_texte.o: src/descripteur_texte.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
-lib/configuration.o : src/configuration.c include/indexation_image.h
+lib/configuration.o : src/configuration.c include/indexation_image.h include/indexation_texte.h include/index_un_son.h include/pile.h
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 lib/quantification.o : src/quantification.c include/configuration.h
@@ -39,6 +39,15 @@ lib/indexation_image.o : src/indexation_image.c include/descripteur_image.h incl
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 lib/indexation_texte.o : src/indexation_texte.c include/descripteur_texte.h include/pile.h include/configuration.h
+	$(CC) -o $@ -c $< $(CFLAGS)
+
+lib/structures.o : src/structures.c include/constantes.h
+	$(CC) -o $@ -c $< $(CFLAGS)
+
+lib/indexationAudio.o : src/indexationAudio.c include/structures.h
+	$(CC) -o $@ -c $< $(CFLAGS)
+
+lib/index_un_son.o : src/index_un_son.c include/configuration.h include/indexationAudio.h
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:

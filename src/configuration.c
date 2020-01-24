@@ -192,9 +192,11 @@ void modifier_config(int param, int valeur)
  * @param imrgb Pile des descripteurs pour les images RGB
  */
 void indexation(Pile t, Pile im, Pile imrgb, int c, int d, int e, int fbis) {
-    int i, compteur;
+    int i, compteur, r;
     char chemin[200];
+    char chemin2[200];
     char aux[100];
+    char str[12];
     FILE * f;
 
     printf("Indexation en cours .....\n");
@@ -276,7 +278,10 @@ void indexation(Pile t, Pile im, Pile imrgb, int c, int d, int e, int fbis) {
             fscanf(f, "%s", aux);
             strcpy(chemin, "../data/Corpus/Sons/");
             strcat(chemin, aux);
-            /*index_un_son(t, chem);*/
+            sprintf(str, "%d", i);
+            strcpy(chemin2, "../data/Descripteurs/Sons/");
+            strcat(chemin2, str);
+            r = indexationAudio(chemin, chemin2, i);
             fscanf(f, "%s", aux);
         }
         fclose(f);

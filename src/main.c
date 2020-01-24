@@ -47,7 +47,7 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
     fscanf(fp, "%d", &b);
     if (a != b/2) e++;
     fclose(fp);
-/*
+
     system("ls ../data/Descripteurs/Sons/ | wc -l > temp");
     system("ls ../data/Corpus/Sons/ | wc -l >> temp");
     fp = fopen("temp", "r");
@@ -55,7 +55,7 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
     fscanf(fp, "%d", &b);
     if (a != b/3) f++;
     fclose(fp);
-*/
+
     system("rm temp");
 
     if (c+d+e+f != 0) {
