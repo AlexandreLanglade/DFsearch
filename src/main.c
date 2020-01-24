@@ -66,8 +66,8 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
         system("clear");
         indexation(t, im, imrgb, c, d, e, f);
     }
-    else {
-        /* Texte */ 
+/*    else {
+         Texte 
         system("ls ../data/Descripteurs/Textes/ | wc -l > temp");
         system("ls ../data/Descripteurs/Textes/ >> temp");
         fp = fopen("temp", "r");
@@ -83,7 +83,7 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
         }  
         fclose(fp);
 
-        /* Image NB */
+         Image NB 
         system("ls ../data/Descripteurs/Images/ | wc -l > temp");
         system("ls ../data/Descripteurs/Images/ >> temp");
         fp = fopen("temp", "r");
@@ -99,7 +99,7 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
         }  
         fclose(fp);
 
-        /* Image rgb */
+         Image rgb 
         system("ls ../data/Descripteurs/ImagesRGB/ | wc -l > temp");
         system("ls ../data/Descripteurs/ImagesRGB/ >> temp");
         fp = fopen("temp", "r");
@@ -115,7 +115,7 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
         }  
         fclose(fp);
         system("rm temp");
-    }
+    }*/
 }
 
 void close_moteur(Pile t, Pile im, Pile imrgb)
