@@ -1,0 +1,18 @@
+Script démarré sur 2020-01-24 18:13:01+0100
+]0;aniss@Dell-Aniss: ~/Documents/testFinal/testRecherche[01;32maniss@Dell-Aniss[00m:[01;34m~/Documents/testFinal/testRecherche[00m$ ./test.out 
+Quel mot chercher ? :h chercheur
+../data/Corpus/Textes/03-Des_chercheurs_parviennent_α_rΘgΘnΘrer.xml 
+../data/Corpus/Textes/08-Sous_l_effet_du_rΘchauffement,_les.xml 
+Si vous souhaitez arreter la recherche tapez 1: 
+5
+Quel mot chercher ? :musique
+../data/Corpus/Textes/05-Musique_Θlectronique___l_Θlan_collectif.xml 
+../data/Corpus/Textes/17-La_voix_envo√tante_de_Girija.xml 
+../data/Corpus/Textes/28-Festival___OsosphΦre,_un_week-end.xml 
+../data/Corpus/Textes/12-Musiques_du_monde___les.xml 
+Si vous souhaitez arreter la recherche tapez 1: 
+1
+]0;aniss@Dell-Aniss: ~/Documents/testFinal/testRecherche[01;32maniss@Dell-Aniss[00m:[01;34m~/Documents/testFinal/testRecherche[00m$ exit
+exit
+
+Script terminé sur 2020-01-24 18:23:54+0100

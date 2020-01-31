@@ -1,0 +1,295 @@
+Script démarré sur 2020-01-24 17:59:34+0100
+]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch/bin[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch/bin[00m$ cd ..
+]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch[00m$ make mrproper 
+rm -rf lib/*.o
+rm -rf bin/DFsearch
+]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch[00m$ make
+gcc -o lib/menu.o -c src/menu.c -W -Wall -ansi -pedantic
+[01m[Ksrc/menu.c:[m[K In function ‘[01m[Kmenu_texte[m[K’:
+[01m[Ksrc/menu.c:94:21:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kt[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_texte(Pile [01;35m[Kt[m[K, Pile im, Pile imrgb)
+                     [01;35m[K^[m[K
+[01m[Ksrc/menu.c:94:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kim[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_texte(Pile t, Pile [01;35m[Kim[m[K, Pile imrgb)
+                             [01;35m[K^~[m[K
+[01m[Ksrc/menu.c:94:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kimrgb[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_texte(Pile t, Pile im, Pile [01;35m[Kimrgb[m[K)
+                                      [01;35m[K^~~~~[m[K
+[01m[Ksrc/menu.c:[m[K In function ‘[01m[Kmenu_image[m[K’:
+[01m[Ksrc/menu.c:140:21:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kt[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_image(Pile [01;35m[Kt[m[K, Pile im, Pile imrgb)
+                     [01;35m[K^[m[K
+[01m[Ksrc/menu.c:140:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kim[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_image(Pile t, Pile [01;35m[Kim[m[K, Pile imrgb)
+                             [01;35m[K^~[m[K
+[01m[Ksrc/menu.c:140:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kimrgb[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_image(Pile t, Pile im, Pile [01;35m[Kimrgb[m[K)
+                                      [01;35m[K^~~~~[m[K
+[01m[Ksrc/menu.c:[m[K In function ‘[01m[Kmenu_audio[m[K’:
+[01m[Ksrc/menu.c:179:21:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kt[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_audio(Pile [01;35m[Kt[m[K, Pile im, Pile imrgb)
+                     [01;35m[K^[m[K
+[01m[Ksrc/menu.c:179:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kim[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_audio(Pile t, Pile [01;35m[Kim[m[K, Pile imrgb)
+                             [01;35m[K^~[m[K
+[01m[Ksrc/menu.c:179:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kimrgb[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_audio(Pile t, Pile im, Pile [01;35m[Kimrgb[m[K)
+                                      [01;35m[K^~~~~[m[K
+[01m[Ksrc/menu.c:[m[K In function ‘[01m[Kmenu_administrateur[m[K’:
+[01m[Ksrc/menu.c:268:30:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kt[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_administrateur(Pile [01;35m[Kt[m[K, Pile im, Pile imrgb)
+                              [01;35m[K^[m[K
+[01m[Ksrc/menu.c:268:38:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kim[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_administrateur(Pile t, Pile [01;35m[Kim[m[K, Pile imrgb)
+                                      [01;35m[K^~[m[K
+[01m[Ksrc/menu.c:268:47:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kimrgb[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_administrateur(Pile t, Pile im, Pile [01;35m[Kimrgb[m[K)
+                                               [01;35m[K^~~~~[m[K
+[01m[Ksrc/menu.c:[m[K In function ‘[01m[Kmenu_ouverture[m[K’:
+[01m[Ksrc/menu.c:344:25:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kt[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_ouverture(Pile [01;35m[Kt[m[K, Pile im, Pile imrgb)
+                         [01;35m[K^[m[K
+[01m[Ksrc/menu.c:344:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kim[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_ouverture(Pile t, Pile [01;35m[Kim[m[K, Pile imrgb)
+                                 [01;35m[K^~[m[K
+[01m[Ksrc/menu.c:344:42:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kimrgb[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ int menu_ouverture(Pile t, Pile im, Pile [01;35m[Kimrgb[m[K)
+                                          [01;35m[K^~~~~[m[K
+gcc -o lib/main.o -c src/main.c -W -Wall -ansi -pedantic
+[01m[Ksrc/main.c:[m[K In function ‘[01m[Kinit_moteur[m[K’:
+[01m[Ksrc/main.c:25:23:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdt[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     Descripteur_texte [01;35m[Kdt[m[K;
+                       [01;35m[K^~[m[K
+[01m[Ksrc/main.c:24:23:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdi[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     Descripteur_image [01;35m[Kdi[m[K;
+                       [01;35m[K^~[m[K
+[01m[Ksrc/main.c:18:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kaux[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     char [01;35m[Kaux[m[K[100];
+          [01;35m[K^~~[m[K
+[01m[Ksrc/main.c:17:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kchemin[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     char [01;35m[Kchemin[m[K[200];
+          [01;35m[K^~~~~~[m[K
+[01m[Ksrc/main.c:16:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcompteur[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     int i, [01;35m[Kcompteur[m[K;
+            [01;35m[K^~~~~~~~[m[K
+[01m[Ksrc/main.c:16:9:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ki[m[K’ [[01;35m[K-Wunused-variable[m[K]
+     int [01;35m[Ki[m[K, compteur;
+         [01;35m[K^[m[K
+gcc -o lib/entree_sortie.o -c src/entree_sortie.c -W -Wall -ansi -pedantic
+gcc -o lib/wait.o -c src/wait.c -W -Wall -ansi -pedantic
+gcc -o lib/descripteur_image.o -c src/descripteur_image.c -W -Wall -ansi -pedantic
+gcc -o lib/descripteur_texte.o -c src/descripteur_texte.c -W -Wall -ansi -pedantic
+gcc -o lib/pile.o -c src/pile.c -W -Wall -ansi -pedantic
+gcc -o lib/configuration.o -c src/configuration.c -W -Wall -ansi -pedantic
+[01m[Ksrc/configuration.c:[m[K In function ‘[01m[Kindexation[m[K’:
+[01m[Ksrc/configuration.c:284:17:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KindexationAudio[m[K’; did you mean ‘[01m[Kindexation[m[K’? [[01;35m[K-Wimplicit-function-declaration[m[K]
+             r = [01;35m[KindexationAudio[m[K(chemin, chemin2, i);
+                 [01;35m[K^~~~~~~~~~~~~~~[m[K
+                 [32m[Kindexation[m[K
+[01m[Ksrc/configuration.c:195:22:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kr[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+     int i, compteur, [01;35m[Kr[m[K;
+                      [01;35m[K^[m[K
+gcc -o lib/quantification.o -c src/quantification.c -W -Wall -ansi -pedantic
+In file included from [01m[Ksrc/../include/configuration.h:16:0[m[K,
+                 from [01m[Ksrc/../include/quantification.h:4[m[K,
+                 from [01m[Ksrc/quantification.c:4[m[K:
+[01m[Ksrc/../include/./indexation_image.h:12:46:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstruct RGBQuantifie_s[m[K’ declared inside parameter list will not be visible outside of this definition or declaration
+ void remplissage_descripteur_imageRGB(struct [01;35m[KRGBQuantifie_s[m[K imageQuantifie, Descripteur_image desc_cible, Pile p);
+                                              [01;35m[K^~~~~~~~~~~~~~[m[K
+gcc -o lib/indexation_image.o -c src/indexation_image.c -W -Wall -ansi -pedantic
+gcc -o lib/indexation_texte.o -c src/indexation_texte.c -W -Wall -ansi -pedantic
+gcc -o lib/indexationAudio.o -c src/indexationAudio.c -W -Wall -ansi -pedantic
+[01m[Ksrc/indexationAudio.c:[m[K In function ‘[01m[KafficherValeurs[m[K’:
+[01m[Ksrc/indexationAudio.c:71:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kvaleurs[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ void afficherValeurs(float *[01;35m[Kvaleurs[m[K,unsigned long nbrValeurs){
+                             [01;35m[K^~~~~~~[m[K
+[01m[Ksrc/indexationAudio.c:71:51:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[KnbrValeurs[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+ void afficherValeurs(float *valeurs,unsigned long [01;35m[KnbrValeurs[m[K){
+                                                   [01;35m[K^~~~~~~~~~[m[K
+[01m[Ksrc/indexationAudio.c:[m[K In function ‘[01m[KchangementBase[m[K’:
+[01m[Ksrc/indexationAudio.c:85:40:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KindiceMin[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+     float temp;unsigned long indiceMax,[01;35m[KindiceMin[m[K;
+                                        [01;35m[K^~~~~~~~~[m[K
+[01m[Ksrc/indexationAudio.c:85:30:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KindiceMax[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+     float temp;unsigned long [01;35m[KindiceMax[m[K,indiceMin;
+                              [01;35m[K^~~~~~~~~[m[K
+gcc -o lib/structures.o -c src/structures.c -W -Wall -ansi -pedantic
+gcc -o lib/index_un_son.o -c src/index_un_son.c -W -Wall -ansi -pedantic
+[01m[Ksrc/index_un_son.c:[m[K In function ‘[01m[KindexationAudio[m[K’:
+[01m[Ksrc/index_un_son.c:32:9:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kresultat[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+     int [01;35m[Kresultat[m[K;
+         [01;35m[K^~~~~~~~[m[K
+gcc -g -o bin/DFsearch lib/menu.o lib/main.o lib/entree_sortie.o lib/wait.o lib/descripteur_image.o lib/descripteur_texte.o lib/pile.o lib/configuration.o lib/quantification.o lib/indexation_image.o lib/indexation_texte.o lib/indexationAudio.o lib/structures.o lib/index_un_son.o /usr/lib/x86_64-linux-gnu/libm.so
+]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch[00m$ cd ./[K[Kbin/
+]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch/bin[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch/bin[00m$ clear
+[3J[H[2J]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch/bin[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch/bin[00m$ ./DFsearch 
+rm: impossible de supprimer '../data/Descripteurs/Textes/*': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../data/Descripteurs/Images/*': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../data/Descripteurs/ImagesRGB/*': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../data/Descripteurs/Sons/*': Aucun fichier ou dossier de ce type
+[3J[H[2JIndexation en cours .....
+[3J[H[2JLa DufonSociety vous souhaite la bienvenue sur son moteur de recherche
+
+Pour accéder au mode utilisateur, veuillez saisir 1. 
+Pour accéder au mode administrateur, veuillez saisir 2. 
+Pour quitter le logiciel, veuillez saisir 3. 
+3
+]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch/bin[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch/bin[00m$ [K]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch/bin[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch/bin[00m$ ./DFsearch 
+[3J[H[2JLa DufonSociety vous souhaite la bienvenue sur son moteur de recherche
+
+Pour accéder au mode utilisateur, veuillez saisir 1. 
+Pour accéder au mode administrateur, veuillez saisir 2. 
+Pour quitter le logiciel, veuillez saisir 3. 
+gty
+[3J[H[2J[31;01m(Err) Selection incorrecte[00m
+La DufonSociety vous souhaite la bienvenue sur son moteur de recherche
+
+Pour accéder au mode utilisateur, veuillez saisir 1. 
+Pour accéder au mode administrateur, veuillez saisir 2. 
+Pour quitter le logiciel, veuillez saisir 3. 
+1
+[3J[H[2JMenu utilisateur :
+(1) Recherche de textes 
+(2) Recherche d'images 
+(3) Recherche de sons 
+(4) Retour à l'acceuil 
+(5) Quitter le logiciel 
+1
+[3J[H[2JVous avez choisi de rechercher des textes. 
+(1) Recherche par mot-clef 
+(2) Recherche par comparaison 
+(3) Retour au menu utilisateur 
+(4) Quitter le logiciel
+ghg
+[3J[H[2J[31;01m(Err) Selection incorrecte[00m
+Vous avez choisi de rechercher des textes. 
+(1) Recherche par mot-clef 
+(2) Recherche par comparaison 
+(3) Retour au menu utilisateur 
+(4) Quitter le logiciel
+gh
+[3J[H[2J[31;01m(Err) Selection incorrecte[00m
+Vous avez choisi de rechercher des textes. 
+(1) Recherche par mot-clef 
+(2) Recherche par comparaison 
+(3) Retour au menu utilisateur 
+(4) Quitter le logiciel
+1
+Veuillez entrer un mot clé : test
+[33;01mfct mot clé non implémentée[00m
+[3J[H[2JMenu utilisateur :
+(1) Recherche de textes 
+(2) Recherche d'images 
+(3) Recherche de sons 
+(4) Retour à l'acceuil 
+(5) Quitter le logiciel 
+4
+[3J[H[2JLa DufonSociety vous souhaite la bienvenue sur son moteur de recherche
+
+Pour accéder au mode utilisateur, veuillez saisir 1. 
+Pour accéder au mode administrateur, veuillez saisir 2. 
+Pour quitter le logiciel, veuillez saisir 3. 
+1
+[3J[H[2JMenu utilisateur :
+(1) Recherche de textes 
+(2) Recherche d'images 
+(3) Recherche de sons 
+(4) Retour à l'acceuil 
+(5) Quitter le logiciel 
+2
+[3J[H[2JVous avez choisi de rechercher des images. 
+(1) Recherche par couleur dominante 
+(2) Recherche par comparaison 
+(3) Retour au menu utilisateur 
+(4) Quitter le logiciel 
+1
+[33;01mfct couleur dominante non implémentée[00m
+[3J[H[2JMenu utilisateur :
+(1) Recherche de textes 
+(2) Recherche d'images 
+(3) Recherche de sons 
+(4) Retour à l'acceuil 
+(5) Quitter le logiciel 
+4
+[3J[H[2JLa DufonSociety vous souhaite la bienvenue sur son moteur de recherche
+
+Pour accéder au mode utilisateur, veuillez saisir 1. 
+Pour accéder au mode administrateur, veuillez saisir 2. 
+Pour quitter le logiciel, veuillez saisir 3. 
+2
+[3J[H[2J(3 tentatives puis redirection menu utilisateur)
+Mot de passe : dmfl
+[3J[H[2J[31;01m(Err) Mot de passe incorrect[00m
+(3 tentatives puis redirection menu utilisateur)
+Mot de passe : df
+[3J[H[2J[31;01m(Err) Mot de passe incorrect[00m
+(3 tentatives puis redirection menu utilisateur)
+Mot de passe : df
+[3J[H[2JMenu utilisateur :
+(1) Recherche de textes 
+(2) Recherche d'images 
+(3) Recherche de sons 
+(4) Retour à l'acceuil 
+(5) Quitter le logiciel 
+4
+[3J[H[2JLa DufonSociety vous souhaite la bienvenue sur son moteur de recherche
+
+Pour accéder au mode utilisateur, veuillez saisir 1. 
+Pour accéder au mode administrateur, veuillez saisir 2. 
+Pour quitter le logiciel, veuillez saisir 3. 
+2
+[3J[H[2J(3 tentatives puis redirection menu utilisateur)
+Mot de passe : dmin    admin
+[3J[H[2JMenu administrateur :
+(1) Lancer l'indexation complète
+(2) Lancer l'indexation d'un fichier seul
+(3) Modifier la configuration
+(4) Passer en mode utilisateur
+(5) Quitter le logiciel 
+1
+[33;01mfct indexation un doc non implémentée[00m
+[3J[H[2JMenu administrateur :
+(1) Lancer l'indexation complète
+(2) Lancer l'indexation d'un fichier seul
+(3) Modifier la configuration
+(4) Passer en mode utilisateur
+(5) Quitter le logiciel 
+3
+*** Config texte : ***
+(1) Valeur limite: -1 mots les plus présents.
+(2) Seuil : mot qui apparaissent plus de 4 fois.
+*** Config image : ***
+(3) Nombre de bits : 3.
+*** Config audio : ***
+(4) Nombre d'échantillons : 8192 dans une fenetre d'analyse.
+(5) Nombre d'intervalles : 15.
+
+
+ Modifier (o/n) ? o
+
+
+Entrez le numéro du paramètre à modifier : 3
+
+
+Entrez la nouvelle valeur du paramètre (Non sécurisé): 2
+[3J[H[2JMenu administrateur :
+(1) Lancer l'indexation complète
+(2) Lancer l'indexation d'un fichier seul
+(3) Modifier la configuration
+(4) Passer en mode utilisateur
+(5) Quitter le logiciel 
+5
+]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch/bin[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch/bin[00m$ ./DFsearch 
+rm: impossible de supprimer '../data/Descripteurs/Images/*': Aucun fichier ou dossier de ce type
+rm: impossible de supprimer '../data/Descripteurs/ImagesRGB/*': Aucun fichier ou dossier de ce type
+[3J[H[2JIndexation en cours .....
+[3J[H[2JLa DufonSociety vous souhaite la bienvenue sur son moteur de recherche
+
+Pour accéder au mode utilisateur, veuillez saisir 1. 
+Pour accéder au mode administrateur, veuillez saisir 2. 
+Pour quitter le logiciel, veuillez saisir 3. 
+3
+]0;alexandre@alexandre-X550JX: ~/Bureau/DFsearch/bin[01;32malexandre@alexandre-X550JX[00m:[01;34m~/Bureau/DFsearch/bin[00m$ exit
+exit
+
+Script terminé sur 2020-01-24 18:10:21+0100

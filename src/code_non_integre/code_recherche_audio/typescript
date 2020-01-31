@@ -1,0 +1,62 @@
+Script démarré sur 2020-01-24 18:11:20+0100
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ ./Tree.shcd ./Treels[Kcd .././ETree.shls[Kcd ./ETreels[Kcd ./GRIF2019.28-Portable-linux64/ls[K./Petri12.shls[Kcd ./Petri12ls[Kcd ./Petri12ls[K./Petri12.shls[Kcd ./GRIF2019.28-Portable-linux64/ls[Kcd ./ETreels[K./ETree.sh[4Pcd ../[4Plscd ./Tree./Tree.sh[Kmake test_ide[Kn[K[Kndexation.[K.out
+gcc -c indexationAudio.c
+gcc -c indexationMain.c
+gcc -c structures.c
+gcc -o test_indexation.out -lm indexationAudio.o -lm indexationMain.o structures.o
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ ./test_indexation.out
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+[K]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ ./test_indexation.outmake test_indexation.out[3P./test_indexation.out
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ make test_recherche.out
+gcc -c rechercheAudio.c
+gcc -c rechercheMain.c
+gcc -c structures.c
+gcc -o test_recherche.out -lm rechercheAudio.o -lm rechercheMain.o structures.o
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ ./recherche.out
+bash: ./recherche.out: Aucun fichier ou dossier de ce type
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ ./recherche.outmake test_recherche.out[8P./recherche.outtrecherche.outerecherche.outsrecherche.outtrecherche.out_recherche.out
+
+ == DEBUT DE PROGRAMME : RECHERCHE AUDIO ==
+
+RESULTATS
+    - 1 : nom fichier : descripteur_court.txt / n°id : 0 .Divergence KL (précision 0.000000)) 0.000000 : lancement à 0.000000 * durée du fichier (s).
+    - 2 : nom fichier : descripteur_long.txt / n°id : 0 .Divergence KL (précision 0.001048)) 5.363165 : lancement à 0.423358 * durée du fichier (s).
+
+ == FIN DE PROGRAMME : RECHERCHE ==
+
+*** stack smashing detected ***: <unknown> terminated
+Abandon (core dumped)
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+[K]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+[K]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ 
+[K]0;jerome@JS-X751MD: ~/Documents/Projet_Fil_Rouge/src[01;32mjerome@JS-X751MD[00m:[01;34m~/Documents/Projet_Fil_Rouge/src[00m$ exit
+exit
+
+Script terminé sur 2020-01-24 18:24:15+0100
