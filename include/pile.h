@@ -12,8 +12,8 @@
 #ifndef H_PILE
 #define H_PILE
 
-#include "./descripteur_texte.h"
-#include "./descripteur_image.h"
+#include "descripteur_texte.h"
+#include "descripteur_image.h"
 /*#include "include/descripteur_audio.h"*/
 
 typedef struct pile_s * Pile;

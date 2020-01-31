@@ -2,7 +2,7 @@
  * @file pile.c
  * @author LANGLADE Alexandre
  * @brief Pile générique pour les descripteurs
- * @version 0.9
+ * @version 1.0
  * @date 2019-12-23
  * 
  * @copyright Copyright (c) 2019

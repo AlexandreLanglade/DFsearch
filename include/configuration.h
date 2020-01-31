@@ -12,10 +12,10 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "./indexation_texte.h"
-#include "./indexation_image.h"
+#include "indexation_texte.h"
+#include "indexation_image.h"
 #include "index_un_son.h"
-#include "./pile.h"
+#include "pile.h"
 
 void afficher_config();
 

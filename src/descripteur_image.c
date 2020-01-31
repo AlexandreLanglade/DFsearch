@@ -1,3 +1,5 @@
+/* jeremy */
+
 #include "../include/descripteur_image.h"
 #include <stdio.h>
 #include <stdlib.h>

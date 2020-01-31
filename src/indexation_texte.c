@@ -1,3 +1,5 @@
+/* aniss */
+
 #include "../include/indexation_texte.h"
 #include <stdio.h>
 #include <stdlib.h>

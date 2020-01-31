@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DFsearch: Référence du fichier /home/alexandre/Bureau/DFsearch/src/configuration.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="DFlogo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DFsearch
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">indexation et recherche des documents</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier configuration.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module gérant la configuration de l'indexation à partir du fichier .config.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;../include/configuration.h&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a7543d4d68348af98a9de4b403f5a189f"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a7543d4d68348af98a9de4b403f5a189f">open</a> ()</td></tr>
+<tr class="memdesc:a7543d4d68348af98a9de4b403f5a189f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction ouvrant le fichier .config.  <a href="#a7543d4d68348af98a9de4b403f5a189f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7543d4d68348af98a9de4b403f5a189f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf925a502b3b20329c51fcd5a06292c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#abf925a502b3b20329c51fcd5a06292c3">close</a> (FILE *f)</td></tr>
+<tr class="memdesc:abf925a502b3b20329c51fcd5a06292c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction fermant le fichier .config.  <a href="#abf925a502b3b20329c51fcd5a06292c3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abf925a502b3b20329c51fcd5a06292c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f93e17867bd024ec34b9432f73fbfc9"><td class="memItemLeft" align="right" valign="top"><a id="a7f93e17867bd024ec34b9432f73fbfc9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a7f93e17867bd024ec34b9432f73fbfc9">afficher_config</a> ()</td></tr>
+<tr class="memdesc:a7f93e17867bd024ec34b9432f73fbfc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la configuration actuelle. <br /></td></tr>
+<tr class="separator:a7f93e17867bd024ec34b9432f73fbfc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270969a06802fc411300cdf33c0bcc9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a270969a06802fc411300cdf33c0bcc9f">get</a> (int x)</td></tr>
+<tr class="memdesc:a270969a06802fc411300cdf33c0bcc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction interne à <a class="el" href="configuration_8c.html" title="Module gérant la configuration de l&#39;indexation à partir du fichier .config. ">configuration.c</a> pour lire le fichier config.  <a href="#a270969a06802fc411300cdf33c0bcc9f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a270969a06802fc411300cdf33c0bcc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eef3331f0efe104f1e97b23dd935cc6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a4eef3331f0efe104f1e97b23dd935cc6">getModifTexte</a> ()</td></tr>
+<tr class="memdesc:a4eef3331f0efe104f1e97b23dd935cc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surveille la modification des parametres pour les textes.  <a href="#a4eef3331f0efe104f1e97b23dd935cc6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4eef3331f0efe104f1e97b23dd935cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395494edb50918ad96fdbdeda9cf8dab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a395494edb50918ad96fdbdeda9cf8dab">getModifImage</a> ()</td></tr>
+<tr class="memdesc:a395494edb50918ad96fdbdeda9cf8dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surveille la modification des parametres pour les images.  <a href="#a395494edb50918ad96fdbdeda9cf8dab">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a395494edb50918ad96fdbdeda9cf8dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a785b8cbbcacff2400a41c7d1b232c3dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a785b8cbbcacff2400a41c7d1b232c3dc">getModifAudio</a> ()</td></tr>
+<tr class="memdesc:a785b8cbbcacff2400a41c7d1b232c3dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surveille la modification des parametres pour les audios.  <a href="#a785b8cbbcacff2400a41c7d1b232c3dc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a785b8cbbcacff2400a41c7d1b232c3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7baebc2e690158254a21086db0e0a63c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a7baebc2e690158254a21086db0e0a63c">getConfig_texte_ValeurLimite</a> ()</td></tr>
+<tr class="memdesc:a7baebc2e690158254a21086db0e0a63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le paramètre Valeur Limite pour les textes.  <a href="#a7baebc2e690158254a21086db0e0a63c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7baebc2e690158254a21086db0e0a63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2435a00fbe3b2b526a1a5a2e7b18b232"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a2435a00fbe3b2b526a1a5a2e7b18b232">getConfig_texte_Seuil</a> ()</td></tr>
+<tr class="memdesc:a2435a00fbe3b2b526a1a5a2e7b18b232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le paramètre Seuil pour les textes.  <a href="#a2435a00fbe3b2b526a1a5a2e7b18b232">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2435a00fbe3b2b526a1a5a2e7b18b232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a08ad9c211dfaa0ffb05b2216fd03d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a71a08ad9c211dfaa0ffb05b2216fd03d">getConfig_image_NbBits</a> ()</td></tr>
+<tr class="memdesc:a71a08ad9c211dfaa0ffb05b2216fd03d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le paramètre Nombre de Bits pour les images.  <a href="#a71a08ad9c211dfaa0ffb05b2216fd03d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a71a08ad9c211dfaa0ffb05b2216fd03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b22e88551a928aa4a3256c88ed1bed5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a9b22e88551a928aa4a3256c88ed1bed5">getConfig_audio_NbEchant</a> ()</td></tr>
+<tr class="memdesc:a9b22e88551a928aa4a3256c88ed1bed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le paramètre Nombre d'échantillons pour les audios.  <a href="#a9b22e88551a928aa4a3256c88ed1bed5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9b22e88551a928aa4a3256c88ed1bed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b31ab0ab897e1cda523f9f54c673976"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a2b31ab0ab897e1cda523f9f54c673976">getConfig_audio_NbInterv</a> ()</td></tr>
+<tr class="memdesc:a2b31ab0ab897e1cda523f9f54c673976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le paramètre Nombre d'intervalles pour les audios.  <a href="#a2b31ab0ab897e1cda523f9f54c673976">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2b31ab0ab897e1cda523f9f54c673976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48cd85753cb7c898cc7f646857daf9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#a48cd85753cb7c898cc7f646857daf9a2">modifier_config</a> (int param, int valeur)</td></tr>
+<tr class="memdesc:a48cd85753cb7c898cc7f646857daf9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant une modification de la configuration.  <a href="#a48cd85753cb7c898cc7f646857daf9a2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a48cd85753cb7c898cc7f646857daf9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad476d2252c6956b0d2b435e3a70152ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="configuration_8c.html#ad476d2252c6956b0d2b435e3a70152ca">indexation</a> (<a class="el" href="structpile__s.html">Pile</a> t, <a class="el" href="structpile__s.html">Pile</a> im, <a class="el" href="structpile__s.html">Pile</a> imrgb, int c, int d, int e, int fbis)</td></tr>
+<tr class="memdesc:ad476d2252c6956b0d2b435e3a70152ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'indexation générale.  <a href="#ad476d2252c6956b0d2b435e3a70152ca">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad476d2252c6956b0d2b435e3a70152ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module gérant la configuration de l'indexation à partir du fichier .config. </p>
+<dl class="section author"><dt>Auteur</dt><dd>LANGLADE Alexandre </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2020-01-01</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2020 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="abf925a502b3b20329c51fcd5a06292c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf925a502b3b20329c51fcd5a06292c3">&#9670;&nbsp;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void close </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction fermant le fichier .config. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>le fichier à fermer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a270969a06802fc411300cdf33c0bcc9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a270969a06802fc411300cdf33c0bcc9f">&#9670;&nbsp;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction interne à <a class="el" href="configuration_8c.html" title="Module gérant la configuration de l&#39;indexation à partir du fichier .config. ">configuration.c</a> pour lire le fichier config. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>le paramètre que l'on souhaite lire </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int la valeur du paramètre </dd></dl>
+
+</div>
+</div>
+<a id="a9b22e88551a928aa4a3256c88ed1bed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b22e88551a928aa4a3256c88ed1bed5">&#9670;&nbsp;</a></span>getConfig_audio_NbEchant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getConfig_audio_NbEchant </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le paramètre Nombre d'échantillons pour les audios. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int la valeur du paramètre </dd></dl>
+
+</div>
+</div>
+<a id="a2b31ab0ab897e1cda523f9f54c673976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b31ab0ab897e1cda523f9f54c673976">&#9670;&nbsp;</a></span>getConfig_audio_NbInterv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getConfig_audio_NbInterv </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le paramètre Nombre d'intervalles pour les audios. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int la valeur du paramètre </dd></dl>
+
+</div>
+</div>
+<a id="a71a08ad9c211dfaa0ffb05b2216fd03d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a08ad9c211dfaa0ffb05b2216fd03d">&#9670;&nbsp;</a></span>getConfig_image_NbBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getConfig_image_NbBits </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le paramètre Nombre de Bits pour les images. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int la valeur du paramètre </dd></dl>
+
+</div>
+</div>
+<a id="a2435a00fbe3b2b526a1a5a2e7b18b232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2435a00fbe3b2b526a1a5a2e7b18b232">&#9670;&nbsp;</a></span>getConfig_texte_Seuil()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getConfig_texte_Seuil </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le paramètre Seuil pour les textes. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int la valeur du paramètre </dd></dl>
+
+</div>
+</div>
+<a id="a7baebc2e690158254a21086db0e0a63c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7baebc2e690158254a21086db0e0a63c">&#9670;&nbsp;</a></span>getConfig_texte_ValeurLimite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getConfig_texte_ValeurLimite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le paramètre Valeur Limite pour les textes. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int la valeur du paramètre </dd></dl>
+
+</div>
+</div>
+<a id="a785b8cbbcacff2400a41c7d1b232c3dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785b8cbbcacff2400a41c7d1b232c3dc">&#9670;&nbsp;</a></span>getModifAudio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getModifAudio </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Surveille la modification des parametres pour les audios. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 si non modifiés, 1 autrement </dd></dl>
+
+</div>
+</div>
+<a id="a395494edb50918ad96fdbdeda9cf8dab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395494edb50918ad96fdbdeda9cf8dab">&#9670;&nbsp;</a></span>getModifImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getModifImage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Surveille la modification des parametres pour les images. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 si non modifiés, 1 autrement </dd></dl>
+
+</div>
+</div>
+<a id="a4eef3331f0efe104f1e97b23dd935cc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eef3331f0efe104f1e97b23dd935cc6">&#9670;&nbsp;</a></span>getModifTexte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getModifTexte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Surveille la modification des parametres pour les textes. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 si non modifiés, 1 autrement </dd></dl>
+
+</div>
+</div>
+<a id="ad476d2252c6956b0d2b435e3a70152ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad476d2252c6956b0d2b435e3a70152ca">&#9670;&nbsp;</a></span>indexation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void indexation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpile__s.html">Pile</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpile__s.html">Pile</a>&#160;</td>
+          <td class="paramname"><em>im</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpile__s.html">Pile</a>&#160;</td>
+          <td class="paramname"><em>imrgb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fbis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'indexation générale. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Pile des descripteurs pour les textes </td></tr>
+    <tr><td class="paramname">im</td><td>Pile des descripteurs pour les images NB </td></tr>
+    <tr><td class="paramname">imrgb</td><td>Pile des descripteurs pour les images RGB </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a48cd85753cb7c898cc7f646857daf9a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48cd85753cb7c898cc7f646857daf9a2">&#9670;&nbsp;</a></span>modifier_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void modifier_config </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>valeur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant une modification de la configuration. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>le paramètre à modifier </td></tr>
+    <tr><td class="paramname">valeur</td><td>la nouvelle valeur à attribuer au paramètre </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7543d4d68348af98a9de4b403f5a189f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7543d4d68348af98a9de4b403f5a189f">&#9670;&nbsp;</a></span>open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* open </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction ouvrant le fichier .config. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>FILE* correspondant au fichier .config </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

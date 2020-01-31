@@ -1,3 +1,14 @@
+/**
+ * @file main.c
+ * @author AMAIA CAMINO et ALEXANDRE LANGLADE
+ * @brief fonction principale + initialisation et fermeture du logiciel
+ * @version 1.0
+ * @date 2020-01-24
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -118,6 +129,13 @@ void init_moteur(Pile t, Pile im, Pile imrgb)
     }*/
 }
 
+/**
+ * @brief Fermeture du logiciel --> ecriture/enregistrement des piles de descripteurs
+ * 
+ * @param t pile des descripteurs texte
+ * @param im pile des descripteurs image ng
+ * @param imrgb pile des descripteurs image rgb
+ */
 void close_moteur(Pile t, Pile im, Pile imrgb)
 {
     Descripteur_image di;

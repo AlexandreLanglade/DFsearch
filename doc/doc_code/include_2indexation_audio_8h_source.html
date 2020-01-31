@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DFsearch:  Fichier source de /home/alexandre/Bureau/DFsearch/include/indexationAudio.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="DFlogo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DFsearch
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">indexation et recherche des documents</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">indexationAudio.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INDEXATIONAUDIO</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INDEXATIONAUDIO</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;structures.h&quot;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">    INDEXATION -&gt; DESCRIPTEUR_AUDIO indexationAudio(unsigned int m, unsigned int n, int identifiant);</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">    ETAPE 1 : RECUPERATION DES VALEURS</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">        - lectureFichierAudio   : return float valeursFichier[nbrValeurs];</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">        - getK                  : return unsigned int k;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">        - getM                  : return float intervallesM[M];</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">        - M=m++;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">    ETAPE 2 : ECHANTILLONNAGE</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">        - changementBase        : return float valeursFichier[nbrValeurs];</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">        - lectureFenetre        : return float valeursFichier[n];</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">        - histogramme       : return int HISTOGRAMME[1][M];</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">    ETAPE 3 : DESCRIPTEUR</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">        - setFormatFichier      : return COURT ou LONG;</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">        - ecritureDescripteur   : return DESCRIPTEUR_AUDIO;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*/</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">/* ETAPE 1 : RECUPERATION DES VALEURS*/</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">int</span> lectureFichierAudio(<span class="keywordtype">char</span> *nomFichierAudio,<span class="keywordtype">float</span> **valeursFichierAudio,<span class="keywordtype">long</span> *nbrValeurs);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/* renvoie 1 si erreur malloc*/</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/* renvoie 2 si erreur ouverture fichier*/</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getK(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n,<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nbrValeurs);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/* retourne la valeur calculée de k*/</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">int</span> getIntervallesM(<span class="keywordtype">float</span> **intervallesM,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/* retourne un tableau dynamique contenant les m intervalles discrets de [-1;1]*/</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* contient m+1 valeurs*/</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/* contient m intervalles*/</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/* renvoie 1 si erreur malloc*/</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> afficherValeurs(<span class="keywordtype">float</span> *valeurs,<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nbrValeurs);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/* affiche le tableau de valeurs*/</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">/* ETAPE 2 : ECHANTILLONNAGE*/</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> changementBase(<span class="keywordtype">float</span> **valeurs,<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nbrValeurs);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* pré-traitement de toutes les valeurs primitives*/</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/* post-traitement, les valeurs sont dans [-1;1]*/</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/* retourne 1 si erreur malloc*/</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">int</span> lectureNValeurs(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="structcurseur.html">curseur</a>,<span class="keywordtype">float</span> *valeursEntree,<span class="keywordtype">float</span> **valeursSortie,<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> nbrValeurs);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* lit les n valeurs primitives à partir de curseur*/</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/* stock les n valeurs primitives dans un tableau dynamique*/</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">int</span> histogramme(<span class="keywordtype">float</span> *valeursN,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n,<span class="keywordtype">float</span> *intervallesM,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> M,<a class="code" href="structmatrice.html">matrice</a> *mat,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> colonne);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/* créé un histogramme en fct des valeurs et de m*/</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/* renvoie 1 si erreur malloc*/</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/* renvoie 5 si une valeur de intervallesM n&#39;est pas comprise dans [-1;1]*/</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">/* ETAPE 3 : DESCRIPTEUR*/</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">int</span> setFormatFichier(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nbrValeurs); </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/* donne au fichier l&#39;étiquette &quot;Fichier court&quot; ou &quot;Fichier long&quot;*/</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/* renvoie 0 si fichier court, 1 sinon*/</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">int</span> ecritureDescripteur(<span class="keywordtype">char</span> *nomFichierDescripteur,<a class="code" href="structdescripteur.html">descripteur</a> des);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/* écrit dans le fichier descripteur existant*/</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/* renvoie 2 si erreur ouverture fichier*/</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="structcurseur_html"><div class="ttname"><a href="structcurseur.html">curseur</a></div><div class="ttdef"><b>Definition:</b> structures.h:18</div></div>
+<div class="ttc" id="structmatrice_html"><div class="ttname"><a href="structmatrice.html">matrice</a></div><div class="ttdef"><b>Definition:</b> structures.h:5</div></div>
+<div class="ttc" id="structdescripteur_html"><div class="ttname"><a href="structdescripteur.html">descripteur</a></div><div class="ttdef"><b>Definition:</b> structures.h:11</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
